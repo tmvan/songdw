@@ -26,26 +26,26 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-IJ8P0MR</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFw1+FvRqVEyUPj999h1VqAAAAAACAAAAAAAQZgAAAAEAACAAAAAJaFB+SXHBdTVA7MDfUO8DFnesphtz9CdA4u0pF/2cCgAAAAAOgAAAAAIAACAAAABvD1MOPLw0yw/ePE6O/kHQ1iLXethrS2/3LjUy8DUsc5AAAABXKB466u0v57UKsI/zG5H5kuxDn6MwIVroG13dkFx787aAPQ5N1mVd8BbgXTnVYtKLWCCttdml7a4yGBR6mdW6uW5gULvwO23Z1DioG9zxY3DIhn3zo9T7vd1UpfiUlyRlwkDBZFe3dnX4zHUg5wHKR7M8BiYw+xVwnlGgV35ItHTww04+lGlKZ0g17qiBJFJAAAAA3/djxO3L4YpZhhBbECZqxyZZIpPT9hLmswX2H56GuSeiyJfYv2kC22AFsHtgvzFCkReH9rTNeXWKqxM66LkZ+Q==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFw1+FvRqVEyUPj999h1VqAAAAAACAAAAAAAQZgAAAAEAACAAAAAnZuIOalXB7rE4UkglCkf7aAvygKoqNm6kvVxv0wQAFgAAAAAOgAAAAAIAACAAAAA1++zgEt4vBlwhGLVm8Q1VgMq80wdUiHGjVISGGTaHSZAAAAA8QMf50CBK9Qv9H+PsXbbNoJXQjPAw0j21cUquFFggkhMmA36uaCeJnWvexe4Vmv2KcVz2JwwJ8lgaI0v1nvtWigMdVeOifkZjW43+fsuxH+ySfjdfwhdcocnIKVEs1VjOiQhGP3F9QvzEMdUMBS5uh+lQkL90whYvNIeT7yrfctSp0alhpSTubdgVNXT4BihAAAAADWAMIBpwyEm+RVyitsAW1i6AEHSH0JUiWQ/DqSrTUw9OQIhNgO8oKsiADcM3ObrNZcPWrfCH/iWdWP3Kirkovw==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
-          <SSIS:Package SSIS:Name="ExcelToStaging.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ETL.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers />
         <SSIS:DeploymentInfo>
           <SSIS:ProjectConnectionParameters />
           <SSIS:PackageInfo>
-            <SSIS:PackageMetaData SSIS:Name="ExcelToStaging.dtsx">
+            <SSIS:PackageMetaData SSIS:Name="ETL.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{21005956-C898-475B-A263-CC50EEBC95C9}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">ExcelToStaging</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{2BD6BB50-0656-4E28-B5EF-150B21240F41}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">ETL</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">12</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">29</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{2B9701DB-0527-4A36-A3BE-C8E041E5E4C4}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{BDF9ACB3-FADA-4ACF-9696-F43AD6E8A845}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
