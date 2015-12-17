@@ -6,6 +6,7 @@ IF (NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES
 BEGIN
 	CREATE TABLE [dbo].[Page](
 		[Id] [bigint] PRIMARY KEY IDENTITY(1,1) NOT NULL,
+		[ShortName] [nvarchar](20) NOT NULL,
 		[Name] [nvarchar](100) NOT NULL,
 		[Home] [nvarchar](100) NOT NULL
 	)
@@ -28,11 +29,7 @@ BEGIN
 	CREATE TABLE [dbo].[Performers](
 		[Id] [bigint] PRIMARY KEY IDENTITY(1,1) NOT NULL,
 		[SingerId] [bigint] NOT NULL,
-		[Name] [nvarchar](200) NULL,
-		CONSTRAINT [UC_SingerId] UNIQUE NONCLUSTERED(
-			[Id],
-			[SingerId]
-		)
+		[SongId] [bigint] NOT NULL
 	)
 END
 
@@ -52,8 +49,7 @@ IF (NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES
 BEGIN
 	CREATE TABLE [dbo].[Song](
 		[Id] [bigint] PRIMARY KEY IDENTITY(1,1) NOT NULL,
-		[Title] [nvarchar](100) NOT NULL,
-		[GenreGroupId] [bigint] NOT NULL
+		[Title] [nvarchar](100) NOT NULL
 	)
 END
 
@@ -63,12 +59,8 @@ IF (NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES
 BEGIN
 	CREATE TABLE [dbo].[GenreGroup](
 		[Id] [bigint] PRIMARY KEY IDENTITY(1,1) NOT NULL,
-		[GenreId] [bigint] NOT NULL,
-		[Name] [nvarchar](500) NOT NULL,
-		CONSTRAINT [UC_SongGenreId] UNIQUE NONCLUSTERED(
-			[Id],
-			[GenreId]
-		)
+		[SongId] [bigint] NOT NULL,
+		[GenreId] [bigint] NOT NULL
 	)
 END
 
@@ -79,7 +71,8 @@ BEGIN
 	CREATE TABLE [dbo].[HitStatictis](
 		[Id] [bigint] PRIMARY KEY IDENTITY(1,1) NOT NULL,
 		[SongId] [bigint] NOT NULL,
+		[PageId] [bigint] NOT NULL,
 		[HitCount] [int] NOT NULL,
-		[Date] [Date] NOT NULL,
+		[Date] [Date] NOT NULL
 	)
 END
