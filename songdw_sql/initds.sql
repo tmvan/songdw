@@ -8,5 +8,7 @@ TRUNCATE TABLE [dbo].[Performers]
 TRUNCATE TABLE [dbo].[Singer]
 TRUNCATE TABLE [dbo].[Song]
 
-EXECUTE usp_InsertPageIfNotExist 'zing', 'Zing Mp3', 'http://mp3.zing.vn'
-EXECUTE usp_InsertPageIfNotExist 'nct', 'Nhaccuatui', 'http://nhaccuatui.com'
+DECLARE @tmp [bigint]
+
+EXECUTE usp_InsertPageIfNotExist 'zing', 'Zing Mp3', 'http://mp3.zing.vn', @tmp OUT
+EXECUTE usp_InsertPageIfNotExist 'nct', 'Nhaccuatui', 'http://nhaccuatui.com', @tmp OUT

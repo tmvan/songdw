@@ -49,7 +49,7 @@ IF (NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES
 BEGIN
 	CREATE TABLE [dbo].[Song](
 		[Id] [bigint] PRIMARY KEY IDENTITY(1,1) NOT NULL,
-		[Title] [nvarchar](100) NOT NULL
+		[Title] [nvarchar](200) NOT NULL
 	)
 END
 
