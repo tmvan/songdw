@@ -20,4 +20,4 @@ bld/
 [Oo]bj/
 
 # Ignore folders
-_backup/
+__dobi/
