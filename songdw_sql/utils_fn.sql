@@ -19,14 +19,40 @@ USE[SONG]
 
 IF EXISTS (SELECT * 
 		FROM sys.objects 
-		WHERE  [object_id] = OBJECT_ID(N'[dbo].[ufn_SplitString]') AND 
+		WHERE  [object_id] = OBJECT_ID(N'[dbo].[ufn_Trim]') AND 
 			[type] IN (N'FN', N'IF', N'TF', N'FS', N'FT'))
-  EXECUTE('DROP FUNCTION [dbo].[ufn_SplitString]')
+  EXECUTE('DROP FUNCTION [dbo].[ufn_Trim]')
 GO
 
-CREATE FUNCTION [dbo].[ufn_SplitString] (
-	@string [nvarchar](1000), -- STRING TO SPLIT
-	@delimiter [nvarchar](10) -- NOT SPACE!
+CREATE FUNCTION [dbo].[ufn_Trim] (
+	@string [nvarchar](1000) -- STRING TO SPLIT
+)
+RETURNS [nvarchar](1000) AS
+BEGIN
+	DECLARE @trimmed [nvarchar](1000) = RTRIM(LTRIM(@string))
+
+	DECLARE	@left [nvarchar](1) = LEFT(@trimmed, 1),
+			@right [nvarchar](1) = RIGHT(@trimmed, 1)
+
+	IF @left IN ('"')
+		SET @trimmed = SUBSTRING(@trimmed, 2, LEN(@trimmed))
+		
+	IF @right IN ('"')
+		SET @trimmed = SUBSTRING(@trimmed, 1, LEN(@trimmed) - 1)
+
+	RETURN RTRIM(LTRIM(@trimmed))
+END
+GO
+
+IF EXISTS (SELECT * 
+		FROM sys.objects 
+		WHERE  [object_id] = OBJECT_ID(N'[dbo].[ufn_CommaSplit]') AND 
+			[type] IN (N'FN', N'IF', N'TF', N'FS', N'FT'))
+  EXECUTE('DROP FUNCTION [dbo].[ufn_CommaSplit]')
+GO
+
+CREATE FUNCTION [dbo].[ufn_CommaSplit] (
+	@string [nvarchar](1000) -- STRING TO SPLIT
 )
 
 RETURNS @parts TABLE (
@@ -34,38 +60,42 @@ RETURNS @parts TABLE (
 ) AS
 
 BEGIN
-	DECLARE @len [int] = LEN(@string), 
-			@dlen [int] = LEN(@delimiter)
-	
-	IF @dlen = 0 OR @dlen > @len
-		INSERT INTO @parts VALUES (@string)
+	DECLARE @len [int] = LEN(@string),
+			@ignore [bit] = 0
 
-	IF @dlen < @len
+	IF @len > 1
 	BEGIN
 		DECLARE @index [int] = 0,
 			@start_index [int] = 0,
 			@sub [nvarchar](999),
 			@part [nvarchar](999)
 
-		WHILE @index + @dlen < @len
+		WHILE @index + 1 < @len
 		BEGIN
-			SET @sub = SUBSTRING(@string, @index, @dlen)
-			IF @sub = @delimiter
+			SET @sub = SUBSTRING(@string, @index, 1)
+			IF @sub = '"'
+			BEGIN
+				IF @ignore = 0
+					SET @ignore = 1
+				ELSE
+					SET @ignore = 0
+			END
+			IF @sub = ',' AND @ignore = 0
 			BEGIN
 				SET @part = SUBSTRING(@string, @start_index, @index - @start_index)
-				INSERT INTO @parts VALUES (RTRIM(LTRIM(@part)))
-				SET @start_index = @index + @dlen
+				INSERT INTO @parts VALUES ([dbo].[ufn_Trim](@part))
+				SET @start_index = @index + 1
 			END
 			SET @index = @index + 1
 		END
 
-		SET @sub = SUBSTRING(@string, @len - @dlen + 1, @dlen)
-		IF @sub = @delimiter
-			SET @part = SUBSTRING(@string, @start_index, @len - @start_index - @dlen + 1)
+		SET @sub = SUBSTRING(@string, @len, 1)
+		IF @sub = ','
+			SET @part = SUBSTRING(@string, @start_index, @len - @start_index)
 		ELSE
 			SET @part = SUBSTRING(@string, @start_index, @len + 1)
 
-		INSERT INTO @parts VALUES (RTRIM(LTRIM(@part)))
+		INSERT INTO @parts VALUES ([dbo].[ufn_Trim](@part))
 	END
 
 	RETURN
