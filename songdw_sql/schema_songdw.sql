@@ -5,8 +5,8 @@ IF (NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES
 	AND  TABLE_NAME = 'DimDate'))
 BEGIN
 	CREATE TABLE [dbo].[DimDate](
-		[Id] [bigint] PRIMARY KEY IDENTITY(1,1) NOT NULL,
-		[AltId] [nvarchar](20) UNIQUE NOT NULL,
+		[DateKey] [bigint] PRIMARY KEY IDENTITY(1,1) NOT NULL,
+		[AltKey] [nvarchar](20) UNIQUE NOT NULL,
 		[DayOfMonth] INT NOT NULL,
 		[MonthOfYear] INT NOT NULL,
 		[Year] INT NOT NULL
@@ -18,7 +18,8 @@ IF (NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES
 	AND  TABLE_NAME = 'DimPage'))
 BEGIN
 	CREATE TABLE [dbo].[DimPage](
-		[Id] [bigint] PRIMARY KEY IDENTITY(1,1) NOT NULL,
+		[PageKey] [bigint] PRIMARY KEY IDENTITY(1,1) NOT NULL,
+		[BusinessKey] [bigint] NOT NULL,
 		[Name] [nvarchar](100) NOT NULL,
 		[Home] [nvarchar](100) NOT NULL
 	)
@@ -29,8 +30,9 @@ IF (NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES
 	AND  TABLE_NAME = 'DimSinger'))
 BEGIN
 	CREATE TABLE [dbo].[DimSinger](
-		[Id] [bigint] PRIMARY KEY IDENTITY(1,1) NOT NULL,
-		[Name] [nvarchar](100) NOT NULL
+		[SingerKey] [bigint] PRIMARY KEY IDENTITY(1,1) NOT NULL,
+		[BusinessKey] [bigint] NOT NULL,
+		[Name] [nvarchar](200) NOT NULL
 	)
 END
 
@@ -39,13 +41,10 @@ IF (NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES
 	AND  TABLE_NAME = 'DimPerformers'))
 BEGIN
 	CREATE TABLE [dbo].[DimPerformers](
-		[Id] [bigint] PRIMARY KEY IDENTITY(1,1) NOT NULL,
-		[SingerId] [bigint] NOT NULL,
-		[Name] [nvarchar](200) NULL,
-		CONSTRAINT [UC_SingerId] UNIQUE NONCLUSTERED(
-			[Id],
-			[SingerId]
-		)
+		[PerformersKey] [bigint] PRIMARY KEY IDENTITY(1,1) NOT NULL,
+		[BusinessKey] [bigint] NOT NULL,
+		[SingerKey] [bigint] NOT NULL,
+		[SongKey] [bigint] NOT NULL
 	)
 END
 
@@ -54,8 +53,9 @@ IF (NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES
 	AND  TABLE_NAME = 'DimGenre'))
 BEGIN
 	CREATE TABLE [dbo].[DimGenre](
-		[Id] [bigint] PRIMARY KEY IDENTITY(1,1) NOT NULL,
-		[Genre] [NVARCHAR](50) NOT NULL
+		[GenreKey] [bigint] PRIMARY KEY IDENTITY(1,1) NOT NULL,
+		[BusinessKey] [bigint] NOT NULL,
+		[Genre] [nvarchar](50) NOT NULL
 	)
 END
 
@@ -64,24 +64,21 @@ IF (NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES
 	AND  TABLE_NAME = 'DimSong'))
 BEGIN
 	CREATE TABLE [dbo].[DimSong](
-		[Id] [bigint] PRIMARY KEY IDENTITY(1,1) NOT NULL,
-		[SongId] [bigint] NOT NULL,
+		[SongKey] [bigint] PRIMARY KEY IDENTITY(1,1) NOT NULL,
+		[BusinessKey] [bigint] NOT NULL,
 		[Title] [nvarchar](100) NOT NULL
 	)
 END
 
 IF (NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES 
 	WHERE TABLE_SCHEMA = 'dbo'
-	AND  TABLE_NAME = 'DimSongGenre'))
+	AND  TABLE_NAME = 'DimGenreGroup'))
 BEGIN
-	CREATE TABLE [dbo].[DimSongGenre](
-		[Id] [bigint] PRIMARY KEY IDENTITY(1,1) NOT NULL,
-		[GenreId] [bigint] NOT NULL,
-		[Name] [nvarchar](500) NOT NULL,
-		CONSTRAINT [UC_SongGenreId] UNIQUE NONCLUSTERED(
-			[Id],
-			[GenreId]
-		)
+	CREATE TABLE [dbo].[DimGenreGroup](
+		[SongGenreKey] [bigint] PRIMARY KEY IDENTITY(1,1) NOT NULL,
+		[BusinessKey] [bigint] NOT NULL,
+		[SongKey] [bigint] NOT NULL,
+		[GenreKey] [bigint] NOT NULL
 	)
 END
 
@@ -90,11 +87,12 @@ IF (NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES
 	AND  TABLE_NAME = 'FactSong'))
 BEGIN
 	CREATE TABLE [dbo].[FactSong](
-		[Id] [bigint] PRIMARY KEY IDENTITY(1,1) NOT NULL,
-		[SongId] [bigint] NOT NULL,
-		[DateId] [bigint] NOT NULL,
-		[PerformersId] [bigint] NOT NULL,
-		[SongGenreId] [bigint] NOT NULL,
-		[TotalPlay] [int] NOT NULL
+		[SongFactKey] [bigint] PRIMARY KEY IDENTITY(1,1) NOT NULL,
+		[SongKey] [bigint] NOT NULL,
+		[DateKey] [bigint] NOT NULL,
+		[PerformersKey] [bigint] NOT NULL,
+		[SongGenreKey] [bigint] NOT NULL,
+		[PageKey] [bigint] NOT NULL,
+		[HitCount] [int] NOT NULL
 	)
 END

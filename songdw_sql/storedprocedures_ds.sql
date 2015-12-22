@@ -105,7 +105,7 @@ IF NOT EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND OBJECT_ID = OBJECT
 GO
 
 ALTER PROCEDURE [dbo].[usp_InsertSongIfNotExist]
-	@title [nvarchar](100),
+	@title [nvarchar](200),
 	@id [bigint] OUT AS 
 BEGIN
 	SET @id = 0
@@ -146,7 +146,7 @@ IF NOT EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND OBJECT_ID = OBJECT
 GO
 
 ALTER PROCEDURE [dbo].[usp_InserDataFromCsvRow]
-	@title [nvarchar](100),
+	@title [nvarchar](200),
 	@performers [nvarchar](1000),
 	@genres [nvarchar](1000),
 	@hitcount [int],

@@ -10,7 +10,7 @@ BEGIN
 			@Day INT = 1,
 			@i INT = 0,
 			@iYear INT, @iMonth INT, @iDay INT, @iDayMax INT,
-			@AltId [nvarchar](20)
+			@AltKey [nvarchar](20)
 	WHILE @i < 2
 	BEGIN
 		SET @iYear = @Year + @i
@@ -40,14 +40,14 @@ BEGIN
 				END
 			WHILE @iDay <= @iDayMax
 			BEGIN
-				SET @AltId = REPLACE(STR(@iYear, 4), ' ', '0') +
+				SET @AltKey = REPLACE(STR(@iYear, 4), ' ', '0') +
 							REPLACE(STR(@iMonth, 2), ' ', '0') +
 							REPLACE(STR(@iDay, 2), ' ', '0')
 
-				IF NOT EXISTS(SELECT [AltId] FROM [dbo].[DimDate] WHERE [AltId] = @AltId)
+				IF NOT EXISTS(SELECT [AltKey] FROM [dbo].[DimDate] WHERE [AltKey] = @AltKey)
 				BEGIN
-					INSERT INTO [dbo].[DimDate] ([AltId], [DayOfMonth], [MonthOfYear], [Year])
-					VALUES (@AltId, @iDay, @iMonth, @iYear)
+					INSERT INTO [dbo].[DimDate] ([AltKey], [DayOfMonth], [MonthOfYear], [Year])
+					VALUES (@AltKey, @iDay, @iMonth, @iYear)
 				END
 
 				SET @iDay = @iDay + 1
