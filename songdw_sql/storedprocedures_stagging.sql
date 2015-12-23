@@ -30,24 +30,11 @@ GO
 
 ALTER PROCEDURE [dbo].[usp_InsertToSingerStagging]
 	@key [bigint],
-	@name [nvarchar](200) AS
+	@name [nvarchar](200),
+	@isgroup [bit] AS
 BEGIN
-	INSERT INTO [dbo].[Singer] ([BusinessKey], [Name])
-	VALUES (@key, @name)
-END
-GO
-
-IF NOT EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND OBJECT_ID = OBJECT_ID('dbo.usp_InsertToPerformersStagging'))
-   EXECUTE('CREATE PROCEDURE [dbo].[usp_InsertToPerformersStagging] AS BEGIN SET NOCOUNT ON; END')
-GO
-
-ALTER PROCEDURE [dbo].[usp_InsertToPerformersStagging]
-	@key [bigint],
-	@singerId [bigint],
-	@songId [bigint] AS
-BEGIN
-	INSERT INTO [dbo].[Performers] ([BusinessKey], [SingerId], [SongId])
-	VALUES (@key, @singerId, @songId)
+	INSERT INTO [dbo].[Singer] ([BusinessKey], [Name], [IsGroup])
+	VALUES (@key, @name, @isgroup)
 END
 GO
 
@@ -75,20 +62,5 @@ ALTER PROCEDURE [dbo].[usp_InsertToSongStagging]
 BEGIN
 	INSERT INTO [dbo].[Song] ([BusinessKey], [Title])
 	VALUES (@key, @title)	
-END
-GO
-
-
-IF NOT EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND OBJECT_ID = OBJECT_ID('dbo.usp_InsertToGenreGroupStagging'))
-   EXECUTE('CREATE PROCEDURE [dbo].[usp_InsertToGenreGroupStagging] AS BEGIN SET NOCOUNT ON; END')
-GO
-
-ALTER PROCEDURE [dbo].[usp_InsertToGenreGroupStagging]
-	@key [bigint],
-	@songId [bigint],
-	@genreId [bigint] As
-BEGIN
-	INSERT INTO [dbo].[GenreGroup] ([BusinessKey], [SongId], [GenreId])
-	VALUES (@key, @songId, @genreId)
 END
 GO

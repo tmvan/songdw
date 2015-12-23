@@ -3,13 +3,34 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "SongSSIS", "SongSSIS\SongSSIS.dtproj", "{3D846678-792E-425F-86F8-49665DFBAC0E}"
 EndProject
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "SongSSRS", "SongSSRS\SongSSRS.rptproj", "{0C3CFA1E-CF2D-4B52-922D-F19CBC3C614F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
 		Development|Default = Development|Default
+		Release|Default = Release|Default
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3D846678-792E-425F-86F8-49665DFBAC0E}.Debug|Default.ActiveCfg = Development
+		{3D846678-792E-425F-86F8-49665DFBAC0E}.Debug|Default.Build.0 = Development
+		{3D846678-792E-425F-86F8-49665DFBAC0E}.DebugLocal|Default.ActiveCfg = Development
+		{3D846678-792E-425F-86F8-49665DFBAC0E}.DebugLocal|Default.Build.0 = Development
 		{3D846678-792E-425F-86F8-49665DFBAC0E}.Development|Default.ActiveCfg = Development
 		{3D846678-792E-425F-86F8-49665DFBAC0E}.Development|Default.Build.0 = Development
+		{3D846678-792E-425F-86F8-49665DFBAC0E}.Release|Default.ActiveCfg = Development
+		{3D846678-792E-425F-86F8-49665DFBAC0E}.Release|Default.Build.0 = Development
+		{0C3CFA1E-CF2D-4B52-922D-F19CBC3C614F}.Debug|Default.ActiveCfg = Debug
+		{0C3CFA1E-CF2D-4B52-922D-F19CBC3C614F}.Debug|Default.Build.0 = Debug
+		{0C3CFA1E-CF2D-4B52-922D-F19CBC3C614F}.Debug|Default.Deploy.0 = Debug
+		{0C3CFA1E-CF2D-4B52-922D-F19CBC3C614F}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{0C3CFA1E-CF2D-4B52-922D-F19CBC3C614F}.DebugLocal|Default.Build.0 = DebugLocal
+		{0C3CFA1E-CF2D-4B52-922D-F19CBC3C614F}.Development|Default.ActiveCfg = DebugLocal
+		{0C3CFA1E-CF2D-4B52-922D-F19CBC3C614F}.Development|Default.Build.0 = DebugLocal
+		{0C3CFA1E-CF2D-4B52-922D-F19CBC3C614F}.Release|Default.ActiveCfg = Release
+		{0C3CFA1E-CF2D-4B52-922D-F19CBC3C614F}.Release|Default.Build.0 = Release
+		{0C3CFA1E-CF2D-4B52-922D-F19CBC3C614F}.Release|Default.Deploy.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

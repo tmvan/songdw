@@ -1,4 +1,4 @@
-nUSE [SONG]
+USE [SONG]
 
 IF (NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES 
 	WHERE TABLE_SCHEMA = 'dbo'
@@ -18,18 +18,8 @@ IF (NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES
 BEGIN
 	CREATE TABLE [dbo].[Singer](
 		[Id] [bigint] PRIMARY KEY IDENTITY(1,1) NOT NULL,
-		[Name] [nvarchar](100) NOT NULL
-	)
-END
-
-IF (NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES 
-	WHERE TABLE_SCHEMA = 'dbo'
-	AND  TABLE_NAME = 'Performers'))
-BEGIN
-	CREATE TABLE [dbo].[Performers](
-		[Id] [bigint] PRIMARY KEY IDENTITY(1,1) NOT NULL,
-		[SingerId] [bigint] NOT NULL,
-		[SongId] [bigint] NOT NULL
+		[Name] [nvarchar](500) NOT NULL,
+		[IsGroup] [bit] NOT NULL,
 	)
 END
 
@@ -49,18 +39,9 @@ IF (NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES
 BEGIN
 	CREATE TABLE [dbo].[Song](
 		[Id] [bigint] PRIMARY KEY IDENTITY(1,1) NOT NULL,
-		[Title] [nvarchar](200) NOT NULL
-	)
-END
-
-IF (NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES 
-	WHERE TABLE_SCHEMA = 'dbo'
-	AND  TABLE_NAME = 'GenreGroup'))
-BEGIN
-	CREATE TABLE [dbo].[GenreGroup](
-		[Id] [bigint] PRIMARY KEY IDENTITY(1,1) NOT NULL,
-		[SongId] [bigint] NOT NULL,
-		[GenreId] [bigint] NOT NULL
+		[Title] [nvarchar](200) NOT NULL,
+		[GenreId] [bigint] NOT NULL,
+		[SingerId] [bigint] NOT NULL
 	)
 END
 

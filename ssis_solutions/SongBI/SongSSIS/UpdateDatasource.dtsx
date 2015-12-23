@@ -12,8 +12,8 @@
   DTS:MaxErrorCount="0"
   DTS:ObjectName="UpdateDatasource"
   DTS:PackageType="5"
-  DTS:VersionBuild="70"
-  DTS:VersionGUID="{C73AF229-AA63-44C1-8241-F20C00319767}">
+  DTS:VersionBuild="81"
+  DTS:VersionGUID="{B95CD539-3CEB-4781-B169-DF1E6D617EEC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -867,101 +867,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
               version="1">
               <components>
                 <component
-                  refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Add date and pageId to each row"
-                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
-                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-                  name="Add date and pageId to each row"
-                  usesDispositions="true">
-                  <inputs>
-                    <input
-                      refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Add date and pageId to each row.Inputs[Derived Column Input]"
-                      description="Input to the Derived Column Transformation"
-                      name="Derived Column Input">
-                      <externalMetadataColumns />
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Add date and pageId to each row.Outputs[Derived Column Output]"
-                      description="Default Output of the Derived Column Transformation"
-                      exclusionGroup="1"
-                      name="Derived Column Output"
-                      synchronousInputId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Add date and pageId to each row.Inputs[Derived Column Input]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Add date and pageId to each row.Outputs[Derived Column Output].Columns[pageId]"
-                          dataType="i8"
-                          errorOrTruncationOperation="Computation"
-                          errorRowDisposition="FailComponent"
-                          lineageId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Add date and pageId to each row.Outputs[Derived Column Output].Columns[pageId]"
-                          name="pageId"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Derived Column Expression"
-                              name="Expression">@[User::PageId]</property>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Derived Column Friendly Expression"
-                              expressionType="Notify"
-                              name="FriendlyExpression">@[User::PageId]</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Add date and pageId to each row.Outputs[Derived Column Output].Columns[date]"
-                          dataType="date"
-                          errorOrTruncationOperation="Computation"
-                          errorRowDisposition="FailComponent"
-                          lineageId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Add date and pageId to each row.Outputs[Derived Column Output].Columns[date]"
-                          name="date"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Derived Column Expression"
-                              name="Expression">@[User::DateFromFile]</property>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Derived Column Friendly Expression"
-                              expressionType="Notify"
-                              name="FriendlyExpression">@[User::DateFromFile]</property>
-                          </properties>
-                        </outputColumn>
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Add date and pageId to each row.Outputs[Derived Column Error Output]"
-                      description="Error Output of the Derived Column Transformation"
-                      exclusionGroup="1"
-                      isErrorOut="true"
-                      name="Derived Column Error Output"
-                      synchronousInputId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Add date and pageId to each row.Inputs[Derived Column Input]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Add date and pageId to each row.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Add date and pageId to each row.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Add date and pageId to each row.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Add date and pageId to each row.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          specialFlags="2" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
                   refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Csv Source"
                   componentClassID="{D23FD76B-F51D-420F-BBCB-19CBF6AC1AB4}"
                   contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
@@ -1129,13 +1034,173 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert to Data Source"
+                  refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Derived Column"
+                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Derived Column"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Derived Column.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Derived Column.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Derived Column.Outputs[Derived Column Output].Columns[pageId]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Derived Column.Outputs[Derived Column Output].Columns[pageId]"
+                          name="pageId"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">@[User::PageId]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[User::PageId]</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Derived Column.Outputs[Derived Column Output].Columns[date]"
+                          dataType="date"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Derived Column.Outputs[Derived Column Output].Columns[date]"
+                          name="date"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">@[User::DateFromFile]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[User::DateFromFile]</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Derived Column.Outputs[Derived Column Output].Columns[genreId]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Derived Column.Outputs[Derived Column Output].Columns[genreId]"
+                          name="genreId"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">0L</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">0L</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Derived Column.Outputs[Derived Column Output].Columns[singerId]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Derived Column.Outputs[Derived Column Output].Columns[singerId]"
+                          name="singerId"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">0L</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">0L</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Derived Column.Outputs[Derived Column Output].Columns[songId]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Derived Column.Outputs[Derived Column Output].Columns[songId]"
+                          name="songId"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">0L</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">0L</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Derived Column.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Genre If Not Exist"
                   componentClassID="{93FFEC66-CBC8-4C7F-9C6A-CB1C17A7567D}"
                   contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
-                  localeId="1033"
-                  name="Insert to Data Source"
+                  description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+                  name="Insert To Genre If Not Exist"
                   usesDispositions="true"
-                  validateExternalMetadata="False"
                   version="2">
                   <properties>
                     <property
@@ -1147,7 +1212,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                       description="The SQL command to be executed."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">EXECUTE [dbo].[usp_InserDataFromCsvRow] ?, ?, ?, ?, ?, ?</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">EXECUTE [dbo].[usp_InsertGenreIfNotExist] ?, ? OUTPUT</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1155,7 +1220,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert to Data Source.Connections[OleDbConnection]"
+                      refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Genre If Not Exist.Connections[OleDbConnection]"
                       connectionManagerID="{F1C3BEF1-92F2-4D71-AB01-87DDFECFBD28}:external"
                       connectionManagerRefId="Project.ConnectionManagers[SongDataSource]"
                       description="The OLE DB runtime connection used to access the database."
@@ -1163,121 +1228,49 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert to Data Source.Inputs[OLE DB Command Input]"
+                      refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Genre If Not Exist.Inputs[OLE DB Command Input]"
                       errorOrTruncationOperation="Command Execution"
                       errorRowDisposition="FailComponent"
                       hasSideEffects="true"
                       name="OLE DB Command Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert to Data Source.Inputs[OLE DB Command Input].Columns[singers]"
-                          cachedDataType="wstr"
-                          cachedLength="500"
-                          cachedName="singers"
-                          externalMetadataColumnId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert to Data Source.Inputs[OLE DB Command Input].ExternalColumns[@performers]"
-                          lineageId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Csv Source.Outputs[Flat File Source Output].Columns[singers]" />
-                        <inputColumn
-                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert to Data Source.Inputs[OLE DB Command Input].Columns[genres]"
+                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Genre If Not Exist.Inputs[OLE DB Command Input].Columns[genres]"
                           cachedDataType="wstr"
                           cachedLength="500"
                           cachedName="genres"
-                          externalMetadataColumnId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert to Data Source.Inputs[OLE DB Command Input].ExternalColumns[@genres]"
+                          externalMetadataColumnId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Genre If Not Exist.Inputs[OLE DB Command Input].ExternalColumns[@genre]"
                           lineageId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Csv Source.Outputs[Flat File Source Output].Columns[genres]" />
                         <inputColumn
-                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert to Data Source.Inputs[OLE DB Command Input].Columns[total_play]"
+                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Genre If Not Exist.Inputs[OLE DB Command Input].Columns[genreId]"
                           cachedDataType="i8"
-                          cachedName="total_play"
-                          externalMetadataColumnId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert to Data Source.Inputs[OLE DB Command Input].ExternalColumns[@hitcount]"
-                          lineageId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Csv Source.Outputs[Flat File Source Output].Columns[total_play]" />
-                        <inputColumn
-                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert to Data Source.Inputs[OLE DB Command Input].Columns[title]"
-                          cachedDataType="wstr"
-                          cachedLength="200"
-                          cachedName="title"
-                          externalMetadataColumnId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert to Data Source.Inputs[OLE DB Command Input].ExternalColumns[@title]"
-                          lineageId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Csv Source.Outputs[Flat File Source Output].Columns[title]" />
-                        <inputColumn
-                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert to Data Source.Inputs[OLE DB Command Input].Columns[pageId]"
-                          cachedDataType="i8"
-                          cachedName="pageId"
-                          externalMetadataColumnId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert to Data Source.Inputs[OLE DB Command Input].ExternalColumns[@pageId]"
-                          lineageId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Add date and pageId to each row.Outputs[Derived Column Output].Columns[pageId]" />
-                        <inputColumn
-                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert to Data Source.Inputs[OLE DB Command Input].Columns[date]"
-                          cachedDataType="date"
-                          cachedName="date"
-                          externalMetadataColumnId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert to Data Source.Inputs[OLE DB Command Input].ExternalColumns[@date]"
-                          lineageId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Add date and pageId to each row.Outputs[Derived Column Output].Columns[date]" />
+                          cachedName="genreId"
+                          externalMetadataColumnId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Genre If Not Exist.Inputs[OLE DB Command Input].ExternalColumns[@id]"
+                          lineageId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Derived Column.Outputs[Derived Column Output].Columns[genreId]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert to Data Source.Inputs[OLE DB Command Input].ExternalColumns[@title]"
+                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Genre If Not Exist.Inputs[OLE DB Command Input].ExternalColumns[@genre]"
                           dataType="wstr"
-                          length="200"
-                          name="@title">
+                          length="50"
+                          name="@genre">
                           <properties>
                             <property
                               dataType="System.Int32"
                               description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">1</property>
+                              name="DBParamInfoFlags">65</property>
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
-                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert to Data Source.Inputs[OLE DB Command Input].ExternalColumns[@performers]"
-                          dataType="wstr"
-                          length="1000"
-                          name="@performers">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">1</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert to Data Source.Inputs[OLE DB Command Input].ExternalColumns[@genres]"
-                          dataType="wstr"
-                          length="1000"
-                          name="@genres">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">1</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert to Data Source.Inputs[OLE DB Command Input].ExternalColumns[@hitcount]"
+                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Genre If Not Exist.Inputs[OLE DB Command Input].ExternalColumns[@id]"
                           dataType="i8"
-                          name="@hitcount">
+                          name="@id">
                           <properties>
                             <property
                               dataType="System.Int32"
                               description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">1</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert to Data Source.Inputs[OLE DB Command Input].ExternalColumns[@pageId]"
-                          dataType="i8"
-                          name="@pageId">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">1</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert to Data Source.Inputs[OLE DB Command Input].ExternalColumns[@date]"
-                          dataType="dbDate"
-                          name="@date">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">1</property>
+                              name="DBParamInfoFlags">83</property>
                           </properties>
                         </externalMetadataColumn>
                       </externalMetadataColumns>
@@ -1285,31 +1278,2366 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert to Data Source.Outputs[OLE DB Command Output]"
+                      refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Genre If Not Exist.Outputs[OLE DB Command Output]"
                       exclusionGroup="1"
                       name="OLE DB Command Output"
-                      synchronousInputId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert to Data Source.Inputs[OLE DB Command Input]">
+                      synchronousInputId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Genre If Not Exist.Inputs[OLE DB Command Input]">
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert to Data Source.Outputs[OLE DB Command Error Output]"
+                      refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Genre If Not Exist.Outputs[OLE DB Command Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="OLE DB Command Error Output"
-                      synchronousInputId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert to Data Source.Inputs[OLE DB Command Input]">
+                      synchronousInputId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Genre If Not Exist.Inputs[OLE DB Command Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert to Data Source.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Genre If Not Exist.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert to Data Source.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Genre If Not Exist.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert to Data Source.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Genre If Not Exist.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert to Data Source.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Genre If Not Exist.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To HitStatictis If Not Exist"
+                  componentClassID="{93FFEC66-CBC8-4C7F-9C6A-CB1C17A7567D}"
+                  contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+                  name="Insert To HitStatictis If Not Exist"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">EXECUTE [dbo].[usp_InsertHitStatictisIfNotExist] ?, ?, ?, ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To HitStatictis If Not Exist.Connections[OleDbConnection]"
+                      connectionManagerID="{F1C3BEF1-92F2-4D71-AB01-87DDFECFBD28}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[SongDataSource]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To HitStatictis If Not Exist.Inputs[OLE DB Command Input]"
+                      errorOrTruncationOperation="Command Execution"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Command Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To HitStatictis If Not Exist.Inputs[OLE DB Command Input].Columns[songId]"
+                          cachedDataType="i8"
+                          cachedName="songId"
+                          externalMetadataColumnId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To HitStatictis If Not Exist.Inputs[OLE DB Command Input].ExternalColumns[@songId]"
+                          lineageId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Derived Column.Outputs[Derived Column Output].Columns[songId]" />
+                        <inputColumn
+                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To HitStatictis If Not Exist.Inputs[OLE DB Command Input].Columns[pageId]"
+                          cachedDataType="i8"
+                          cachedName="pageId"
+                          externalMetadataColumnId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To HitStatictis If Not Exist.Inputs[OLE DB Command Input].ExternalColumns[@pageId]"
+                          lineageId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Derived Column.Outputs[Derived Column Output].Columns[pageId]" />
+                        <inputColumn
+                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To HitStatictis If Not Exist.Inputs[OLE DB Command Input].Columns[total_play]"
+                          cachedDataType="i8"
+                          cachedName="total_play"
+                          externalMetadataColumnId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To HitStatictis If Not Exist.Inputs[OLE DB Command Input].ExternalColumns[@hitCount]"
+                          lineageId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Csv Source.Outputs[Flat File Source Output].Columns[total_play]" />
+                        <inputColumn
+                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To HitStatictis If Not Exist.Inputs[OLE DB Command Input].Columns[date]"
+                          cachedDataType="date"
+                          cachedName="date"
+                          externalMetadataColumnId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To HitStatictis If Not Exist.Inputs[OLE DB Command Input].ExternalColumns[@date]"
+                          lineageId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Derived Column.Outputs[Derived Column Output].Columns[date]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To HitStatictis If Not Exist.Inputs[OLE DB Command Input].ExternalColumns[@songId]"
+                          dataType="i8"
+                          name="@songId">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To HitStatictis If Not Exist.Inputs[OLE DB Command Input].ExternalColumns[@pageId]"
+                          dataType="i8"
+                          name="@pageId">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To HitStatictis If Not Exist.Inputs[OLE DB Command Input].ExternalColumns[@hitCount]"
+                          dataType="i4"
+                          name="@hitCount">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To HitStatictis If Not Exist.Inputs[OLE DB Command Input].ExternalColumns[@date]"
+                          dataType="dbDate"
+                          name="@date">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To HitStatictis If Not Exist.Outputs[OLE DB Command Output]"
+                      exclusionGroup="1"
+                      name="OLE DB Command Output"
+                      synchronousInputId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To HitStatictis If Not Exist.Inputs[OLE DB Command Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To HitStatictis If Not Exist.Outputs[OLE DB Command Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Command Error Output"
+                      synchronousInputId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To HitStatictis If Not Exist.Inputs[OLE DB Command Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To HitStatictis If Not Exist.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To HitStatictis If Not Exist.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To HitStatictis If Not Exist.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To HitStatictis If Not Exist.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Singer If Not Exist"
+                  componentClassID="{93FFEC66-CBC8-4C7F-9C6A-CB1C17A7567D}"
+                  contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+                  name="Insert To Singer If Not Exist"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">EXECUTE [dbo].[usp_InsertSingerIfNotExist] ?, ?, ? OUTPUT</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Singer If Not Exist.Connections[OleDbConnection]"
+                      connectionManagerID="{F1C3BEF1-92F2-4D71-AB01-87DDFECFBD28}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[SongDataSource]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Singer If Not Exist.Inputs[OLE DB Command Input]"
+                      errorOrTruncationOperation="Command Execution"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Command Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Singer If Not Exist.Inputs[OLE DB Command Input].Columns[IsGroup]"
+                          cachedDataType="bool"
+                          cachedName="IsGroup"
+                          externalMetadataColumnId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Singer If Not Exist.Inputs[OLE DB Command Input].ExternalColumns[@isgroup]"
+                          lineageId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Tranform Performers.Outputs[Output 0].Columns[IsGroup]" />
+                        <inputColumn
+                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Singer If Not Exist.Inputs[OLE DB Command Input].Columns[singers]"
+                          cachedDataType="wstr"
+                          cachedLength="500"
+                          cachedName="singers"
+                          externalMetadataColumnId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Singer If Not Exist.Inputs[OLE DB Command Input].ExternalColumns[@name]"
+                          lineageId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Csv Source.Outputs[Flat File Source Output].Columns[singers]" />
+                        <inputColumn
+                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Singer If Not Exist.Inputs[OLE DB Command Input].Columns[singerId]"
+                          cachedDataType="i8"
+                          cachedName="singerId"
+                          externalMetadataColumnId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Singer If Not Exist.Inputs[OLE DB Command Input].ExternalColumns[@id]"
+                          lineageId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Derived Column.Outputs[Derived Column Output].Columns[singerId]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Singer If Not Exist.Inputs[OLE DB Command Input].ExternalColumns[@name]"
+                          dataType="wstr"
+                          length="500"
+                          name="@name">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Singer If Not Exist.Inputs[OLE DB Command Input].ExternalColumns[@isgroup]"
+                          dataType="bool"
+                          name="@isgroup">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Singer If Not Exist.Inputs[OLE DB Command Input].ExternalColumns[@id]"
+                          dataType="i8"
+                          name="@id">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">83</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Singer If Not Exist.Outputs[OLE DB Command Output]"
+                      exclusionGroup="1"
+                      name="OLE DB Command Output"
+                      synchronousInputId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Singer If Not Exist.Inputs[OLE DB Command Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Singer If Not Exist.Outputs[OLE DB Command Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Command Error Output"
+                      synchronousInputId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Singer If Not Exist.Inputs[OLE DB Command Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Singer If Not Exist.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Singer If Not Exist.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Singer If Not Exist.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Singer If Not Exist.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Song If Not Exist"
+                  componentClassID="{93FFEC66-CBC8-4C7F-9C6A-CB1C17A7567D}"
+                  contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+                  name="Insert To Song If Not Exist"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">EXECUTE [dbo].[usp_InsertSongIfNotExist] ?, ?, ?, ? OUTPUT</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Song If Not Exist.Connections[OleDbConnection]"
+                      connectionManagerID="{F1C3BEF1-92F2-4D71-AB01-87DDFECFBD28}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[SongDataSource]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Song If Not Exist.Inputs[OLE DB Command Input]"
+                      errorOrTruncationOperation="Command Execution"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Command Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Song If Not Exist.Inputs[OLE DB Command Input].Columns[title]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="title"
+                          externalMetadataColumnId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Song If Not Exist.Inputs[OLE DB Command Input].ExternalColumns[@title]"
+                          lineageId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Csv Source.Outputs[Flat File Source Output].Columns[title]" />
+                        <inputColumn
+                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Song If Not Exist.Inputs[OLE DB Command Input].Columns[singerId]"
+                          cachedDataType="i8"
+                          cachedName="singerId"
+                          externalMetadataColumnId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Song If Not Exist.Inputs[OLE DB Command Input].ExternalColumns[@singerId]"
+                          lineageId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Derived Column.Outputs[Derived Column Output].Columns[singerId]" />
+                        <inputColumn
+                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Song If Not Exist.Inputs[OLE DB Command Input].Columns[genreId]"
+                          cachedDataType="i8"
+                          cachedName="genreId"
+                          externalMetadataColumnId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Song If Not Exist.Inputs[OLE DB Command Input].ExternalColumns[@genreId]"
+                          lineageId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Derived Column.Outputs[Derived Column Output].Columns[genreId]" />
+                        <inputColumn
+                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Song If Not Exist.Inputs[OLE DB Command Input].Columns[songId]"
+                          cachedDataType="i8"
+                          cachedName="songId"
+                          externalMetadataColumnId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Song If Not Exist.Inputs[OLE DB Command Input].ExternalColumns[@id]"
+                          lineageId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Derived Column.Outputs[Derived Column Output].Columns[songId]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Song If Not Exist.Inputs[OLE DB Command Input].ExternalColumns[@title]"
+                          dataType="wstr"
+                          length="200"
+                          name="@title">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Song If Not Exist.Inputs[OLE DB Command Input].ExternalColumns[@singerId]"
+                          dataType="i8"
+                          name="@singerId">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Song If Not Exist.Inputs[OLE DB Command Input].ExternalColumns[@genreId]"
+                          dataType="i8"
+                          name="@genreId">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Song If Not Exist.Inputs[OLE DB Command Input].ExternalColumns[@id]"
+                          dataType="i8"
+                          name="@id">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">83</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Song If Not Exist.Outputs[OLE DB Command Output]"
+                      exclusionGroup="1"
+                      name="OLE DB Command Output"
+                      synchronousInputId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Song If Not Exist.Inputs[OLE DB Command Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Song If Not Exist.Outputs[OLE DB Command Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Command Error Output"
+                      synchronousInputId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Song If Not Exist.Inputs[OLE DB Command Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Song If Not Exist.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Song If Not Exist.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Song If Not Exist.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Song If Not Exist.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Tranform Genre"
+                  componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+                  contactInfo="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;8"
+                  description="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum."
+                  name="Tranform Genre"
+                  version="8">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Stores the source code of the component"
+                      isArray="true"
+                      name="SourceCode"
+                      state="cdata">
+                      <arrayElements
+                        arrayElementCount="30">
+                        <arrayElement
+                          dataType="System.String"><![CDATA[ComponentWrapper.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services component wrapper
+*  This module defines the base class for your component
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+
+public class UserComponent: ScriptComponent
+{
+    public Connections Connections;
+    public Variables Variables;
+    public UserComponent()
+    {
+        Connections = new Connections(this);
+        Variables = new Variables(this);
+    }
+
+    public override void ProcessInput(int InputID, string InputName, PipelineBuffer Buffer, OutputNameMap OutputMap)
+    {
+
+        if (InputName.Equals(@"Input 0", StringComparison.Ordinal))
+        {
+            Input0_ProcessInput(new Input0Buffer(Buffer, GetColumnIndexes(InputID), OutputMap));
+        }
+
+    }
+
+    public virtual void Input0_ProcessInput(Input0Buffer Buffer)
+    {
+        while (Buffer.NextRow())
+        {
+            Input0_ProcessInputRow(Buffer);
+        }
+    }
+
+    public virtual void Input0_ProcessInputRow(Input0Buffer Row)
+    {
+    }
+
+}
+
+public class Connections
+{
+    ScriptComponent ParentComponent;
+
+    public Connections(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+
+public class Variables
+{
+    ScriptComponent ParentComponent;
+
+    public Variables(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\Resources.resx]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[main.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[#region Help:  Introduction to the Script Component
+/* The Script Component allows you to perform virtually any operation that can be accomplished in
+ * a .Net application within the context of an Integration Services data flow.
+ *
+ * Expand the other regions which have "Help" prefixes for examples of specific ways to use
+ * Integration Services features within this script component. */
+#endregion
+
+#region Namespaces
+using System;
+using System.Linq;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+#endregion
+
+/// <summary>
+/// This is the class to which to add your code.  Do not change the name, attributes, or parent
+/// of this class.
+/// </summary>
+[Microsoft.SqlServer.Dts.Pipeline.SSISScriptComponentEntryPointAttribute]
+public class ScriptMain : UserComponent
+{
+    #region Help:  Using Integration Services variables and parameters
+    /* To use a variable in this script, first ensure that the variable has been added to
+     * either the list contained in the ReadOnlyVariables property or the list contained in
+     * the ReadWriteVariables property of this script component, according to whether or not your
+     * code needs to write into the variable.  To do so, save this script, close this instance of
+     * Visual Studio, and update the ReadOnlyVariables and ReadWriteVariables properties in the
+     * Script Transformation Editor window.
+     * To use a parameter in this script, follow the same steps. Parameters are always read-only.
+     *
+     * Example of reading from a variable or parameter:
+     *  DateTime startTime = Variables.MyStartTime;
+     *
+     * Example of writing to a variable:
+     *  Variables.myStringVariable = "new value";
+     */
+    #endregion
+
+    #region Help:  Using Integration Services Connnection Managers
+    /* Some types of connection managers can be used in this script component.  See the help topic
+     * "Working with Connection Managers Programatically" for details.
+     *
+     * To use a connection manager in this script, first ensure that the connection manager has
+     * been added to either the list of connection managers on the Connection Managers page of the
+     * script component editor.  To add the connection manager, save this script, close this instance of
+     * Visual Studio, and add the Connection Manager to the list.
+     *
+     * If the component needs to hold a connection open while processing rows, override the
+     * AcquireConnections and ReleaseConnections methods.
+     * 
+     * Example of using an ADO.Net connection manager to acquire a SqlConnection:
+     *  object rawConnection = Connections.SalesDB.AcquireConnection(transaction);
+     *  SqlConnection salesDBConn = (SqlConnection)rawConnection;
+     *
+     * Example of using a File connection manager to acquire a file path:
+     *  object rawConnection = Connections.Prices_zip.AcquireConnection(transaction);
+     *  string filePath = (string)rawConnection;
+     *
+     * Example of releasing a connection manager:
+     *  Connections.SalesDB.ReleaseConnection(rawConnection);
+     */
+    #endregion
+
+    #region Help:  Firing Integration Services Events
+    /* This script component can fire events.
+     *
+     * Example of firing an error event:
+     *  ComponentMetaData.FireError(10, "Process Values", "Bad value", "", 0, out cancel);
+     *
+     * Example of firing an information event:
+     *  ComponentMetaData.FireInformation(10, "Process Values", "Processing has started", "", 0, fireAgain);
+     *
+     * Example of firing a warning event:
+     *  ComponentMetaData.FireWarning(10, "Process Values", "No rows were received", "", 0);
+     */
+    #endregion
+
+    /// <summary>
+    /// This method is called once, before rows begin to be processed in the data flow.
+    ///
+    /// You can remove this method if you don't need to do anything here.
+    /// </summary>
+    public override void PreExecute()
+    {
+        base.PreExecute();
+        /*
+         * Add your code here
+         */
+    }
+
+    /// <summary>
+    /// This method is called after all the rows have passed through this component.
+    ///
+    /// You can delete this method if you don't need to do anything here.
+    /// </summary>
+    public override void PostExecute()
+    {
+        base.PostExecute();
+        /*
+         * Add your code here
+         */
+    }
+
+    /// <summary>
+    /// This method is called once for every row that passes through the component from Input0.
+    ///
+    /// Example of reading a value from a column in the the row:
+    ///  string zipCode = Row.ZipCode
+    ///
+    /// Example of writing a value to a column in the row:
+    ///  Row.ZipCode = zipCode
+    /// </summary>
+    /// <param name="Row">The row that is currently passing through the component</param>
+    public override void Input0_ProcessInputRow(Input0Buffer Row)
+    {
+        if (Row.genres_IsNull || string.IsNullOrWhiteSpace(Row.genres.Trim()))
+        {
+            Row.genres = "v.a";
+        }
+        else
+        {
+            string genres = Row.genres.ToLower().Trim();
+            string[] split = genres.Split(',').Select(x => x.Trim()).ToArray();
+            Row.genres = Transform(split);
+        }
+    }
+
+    /// <summary>
+    /// De cho don gian ham chi lay 1 the loai trong nhieu the loai (neu co)
+    /// </summary>
+    string Transform(string[] genres)
+    {
+        if (genres.Contains("nhạc trẻ"))
+        {
+            return "nhạc trẻ";
+        }
+        else if (genres.Contains("nhạc việt") ||
+            genres.Contains("việt nam") ||
+            genres.Contains("v-pop") ||
+            genres.Contains("vpop"))
+        {
+            return "nhạc Việt";
+        }
+        else if(genres.Contains("nhạc hàn") ||
+            genres.Contains("hàn quốc") ||
+            genres.Contains("kpop") ||
+            genres.Contains("k-pop"))
+        {
+            return "nhạc Hàn";
+        }
+        else if (genres.Contains("nhạc nhật") ||
+            genres.Contains("nhật bản") ||
+            genres.Contains("j-pop") ||
+            genres.Contains("jpop"))
+        {
+            return "nhạc Nhật";
+        }
+        else if (genres.Contains("nhạc hoa") ||
+            genres.Contains("trung quốc") ||
+            genres.Contains("nhạc trung quốc"))
+        {
+            return "nhạc Hoa";
+        }
+        else if (genres.Contains("us/uk") ||
+            genres.Contains("us-uk") ||
+            genres.Contains("âu mỹ") ||
+            genres.Contains("âu/mỹ"))
+        {
+            return "nhạc Âu/Mỹ";
+        }
+        else if (genres.Length == 0 ||
+             genres.Contains("v.a") ||
+             genres.Contains("tui hát"))
+        {
+            return "v.a";
+        }
+        else if (genres.Contains("không lời") ||
+            genres.Contains("hòa tấu") ||
+            genres.Contains("nhạc không lời") ||
+            genres.Contains("nhạc hòa tấu"))
+        {
+            return "nhạc không lời";
+        }
+        else
+            return genres[0];
+    }
+
+}
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[BufferWrapper.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services buffer wrappers
+*  This module defines classes for accessing data flow buffers
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+
+public class Input0Buffer: ScriptBuffer
+
+{
+    public Input0Buffer(PipelineBuffer Buffer, int[] BufferColumnIndexes, OutputNameMap OutputMap)
+        : base(Buffer, BufferColumnIndexes, OutputMap)
+    {
+    }
+
+    public String genres
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[0]);
+        }
+        set
+        {
+            this[0] = value;
+        }
+    }
+    public bool genres_IsNull
+    {
+        get
+        {
+            return IsNull(0);
+        }
+        set
+        {
+            if (value)
+            {
+                SetNull(0);
+            }
+            else
+            {
+                throw new InvalidOperationException("IsNull property cannot be set to False. Assign a value to the column instead.");
+            }
+        }
+    }
+
+    new public bool NextRow()
+    {
+        return base.NextRow();
+    }
+
+    new public bool EndOfRowset()
+    {
+        return base.EndOfRowset();
+    }
+
+}
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\Settings.Designer.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_6b6871d19cb84172bed502dc67f2f53d.Properties.Settings.get_Default():SC_6b6871d19cb84172bed502dc67f2f53d.Properties.Sett" +
+    "ings")]
+
+namespace SC_6b6871d19cb84172bed502dc67f2f53d.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[SC_6b6871d19cb84172bed502dc67f2f53d.csproj]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{dad05f7b-a844-4664-9fb4-56bb4b0a7271}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SC_6b6871d19cb84172bed502dc67f2f53d</RootNamespace>
+    <AssemblyName>SC_6b6871d19cb84172bed502dc67f2f53d</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.TxScript, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.PipelineHost, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Compile Include="main.cs" />
+    <Compile Include="BufferWrapper.cs" />
+    <Compile Include="ComponentWrapper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <!-- Include the build rules for a C# project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- This section defines VSTA properties that describe the host-changable project properties. -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="ScriptComponent" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" DebugInfoExeName="" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" />
+        <Host Name="ScriptComponent" GeneratedNamespace="SC_6b6871d19cb84172bed502dc67f2f53d" IconIndex="0"></Host>
+        <ProjectClient>
+          <HostIdentifier>SSIS_SC110</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Project]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF16LE]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="3.0" schemaVersion="1.0">
+	<msb:PropertyGroup>
+		<msb:CodeName>SC_6b6871d19cb84172bed502dc67f2f53d</msb:CodeName>
+		<msb:Language>msBuild</msb:Language>
+		<msb:DisplayName>SC_6b6871d19cb84172bed502dc67f2f53d</msb:DisplayName>
+		<msb:ProjectId>{82757222-13F5-42DE-8050-030EBEA69E2D}</msb:ProjectId>
+	</msb:PropertyGroup>
+	<msb:ItemGroup>
+		<msb:Project Include="SC_6b6871d19cb84172bed502dc67f2f53d.csproj"/>
+		<msb:File Include="Properties\AssemblyInfo.cs"/>
+		<msb:File Include="Properties\Settings.settings"/>
+		<msb:File Include="Properties\Resources.resx"/>
+		<msb:File Include="Properties\Resources.Designer.cs"/>
+		<msb:File Include="Properties\Settings.Designer.cs"/>
+		<msb:File Include="main.cs"/>
+		<msb:File Include="BufferWrapper.cs"/>
+		<msb:File Include="ComponentWrapper.cs"/>
+	</msb:ItemGroup>
+</c:Project>]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\AssemblyInfo.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("SC_6b6871d19cb84172bed502dc67f2f53d")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("SC_6b6871d19cb84172bed502dc67f2f53d")]
+[assembly: AssemblyCopyright("Copyright @  2015")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\Settings.settings]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\Resources.Designer.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_6b6871d19cb84172bed502dc67f2f53d.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+    "rceManager")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_6b6871d19cb84172bed502dc67f2f53d.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+    "fo")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_6b6871d19cb84172bed502dc67f2f53d.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+    "):Void")]
+
+namespace SC_6b6871d19cb84172bed502dc67f2f53d.Properties {
+    
+    
+    /// <summary>
+    ///   A strongly-typed resource class, for looking up localized strings, etc.
+    /// </summary>
+    // This class was auto-generated by the StronglyTypedResourceBuilder
+    // class via a tool like ResGen or Visual Studio.
+    // To add or remove a member, edit your .ResX file then rerun ResGen
+    // with the /str option, or rebuild your VS project.
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    internal class Resources {
+        
+        private static global::System.Resources.ResourceManager resourceMan;
+        
+        private static global::System.Globalization.CultureInfo resourceCulture;
+        
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        internal Resources() {
+        }
+        
+        /// <summary>
+        ///   Returns the cached ResourceManager instance used by this class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if ((resourceMan == null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SC_6b6871d19cb84172bed502dc67f2f53d.Properties.Resources", typeof(Resources).Assembly);
+                    resourceMan = temp;
+                }
+                return resourceMan;
+            }
+        }
+        
+        /// <summary>
+        ///   Overrides the current thread's CurrentUICulture property for all
+        ///   resource lookups using this strongly typed resource class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
+                return resourceCulture;
+            }
+            set {
+                resourceCulture = value;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                      </arrayElements>
+                    </property>
+                    <property
+                      dataType="System.String"
+                      description="Stores the binary representation of the component"
+                      isArray="true"
+                      name="BinaryCode"
+                      state="cdata">
+                      <arrayElements
+                        arrayElementCount="2">
+                        <arrayElement
+                          dataType="System.String"><![CDATA[SC_6b6871d19cb84172bed502dc67f2f53d.dll]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAJSCelYAAAAAAAAAAOAAAiELAQsAABoAAAAIAAAAAAAATjgA
+AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAEAAAAAAAAAACAAAAAAgAAAAAAAAMAQIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAPg3AABTAAAAAEAAAAgEAAAAAAAAAAAAAAAAAAAA
+AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAVBgAAAAgAAAAGgAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAAgEAAAAQAAAAAYAAAAcAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAIgAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAAAw
+OAAAAAAAAEgAAAACAAUAkCQAAGgTAAABAAAAAAAAANgjAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAH4CKA0AAAoCAnMSAAAGfQEAAAQCAnMTAAAGfQIAAAQqkgRy
+AQAAcBpvDgAACiwVAgUCAygPAAAKDgRzCwAABm8DAAAGKkorBwIDbwQAAAYDbxAAAAYt8SoGKh4C
+KBEAAAoqHgIoEgAACioeAm8UAAAKKgAAEzAEAIAAAAABAAARA28OAAAGLRIDbwwAAAZvFAAACigV
+AAAKLAwDchEAAHBvDQAABioDbwwAAAZvFgAACm8UAAAKCgYXjRoAAAEMCBYfLJ0IbxcAAAp+AwAA
+BC0RFP4GCgAABnMYAAAKgAMAAAR+AwAABCgBAAArKAIAACsLAwIHKAgAAAZvDQAABioDMAIAiwEA
+AAAAAAADchkAAHAoAwAAKywGchkAAHAqA3IrAABwKAMAACstJwNyPwAAcCgDAAArLRoDclEAAHAo
+AwAAKy0NA3JdAABwKAMAACssBnJnAABwKgNyewAAcCgDAAArLScDco0AAHAoAwAAKy0aA3KfAABw
+KAMAACstDQNyqQAAcCgDAAArLAZytQAAcCoDcscAAHAoAwAAKy0nA3LbAABwKAMAACstGgNy7QAA
+cCgDAAArLQ0DcvkAAHAoAwAAKywGcgMBAHAqA3IXAQBwKAMAACstGgNyKQEAcCgDAAArLQ0Dcj8B
+AHAoAwAAKywGcl8BAHAqA3JxAQBwKAMAACstJwNyfQEAcCgDAAArLRoDcokBAHAoAwAAKy0NA3KV
+AQBwKAMAACssBnKhAQBwKgOOaSwaA3IRAABwKAMAACstDQNytwEAcCgDAAArLAZyEQAAcCoDcscB
+AHAoAwAAKy0nA3LbAQBwKAMAACstGgNy6wEAcCgDAAArLQ0DcgkCAHAoAwAAKywGcusBAHAqAxaa
+Kh4CKAEAAAYqKgIDBAUoHAAACipSAnsdAAAKAnseAAAKFpRvHwAACiomAhYDKCAAAAoqIgIWKCEA
+AAoqWgMsCAIWKCIAAAoqciMCAHBzIwAACnoeAigkAAAKKh4CKCUAAAoqOgIoJgAACgIDfQQAAAQq
+OgIoJgAACgIDfQUAAAQqHgIoJgAACioAEzACAC0AAAACAAARfgYAAAQtIHLAAgBw0AcAAAIoKAAA
+Cm8pAAAKcyoAAAoKBoAGAAAEfgYAAAQqGn4HAAAEKh4CgAcAAAQqGn4IAAAEKi5zGQAABoAIAAAE
+Kh4CKCwAAAoqAAAAAAC0AAAAzsrvvgEAAACRAAAAbFN5c3RlbS5SZXNvdXJjZXMuUmVzb3VyY2VS
+ZWFkZXIsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGlj
+S2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OSNTeXN0ZW0uUmVzb3VyY2VzLlJ1bnRpbWVSZXNvdXJj
+ZVNldAIAAAAAAAAAAAAAAFBBRFBBRFC0AAAAQlNKQgEAAQAAAAAADAAAAHY0LjAuMzAzMTkAAAAA
+BQBsAAAADAYAACN+AAB4BgAAnAcAACNTdHJpbmdzAAAAABQOAAA0AwAAI1VTAEgRAAAQAAAAI0dV
+SUQAAABYEQAAEAIAACNCbG9iAAAAAAAAAAIAAAFXFaIJCQkAAAD6JTMAFgAAAQAAACMAAAAIAAAA
+CAAAABoAAAARAAAALAAAABEAAAACAAAAAwAAAAUAAAAIAAAAAQAAAAEAAAAFAAAAAQAAAAMAAAAA
+AAoAAQAAAAAABgDuAM0ABgD+AM0ACgAbARQBDgA3ASIBEgB2Ac0ABgCFAc0ACgBwAl8CCgChAowC
+CgB6A2ADCgClA5MDCgC8A5MDCgDZA5MDCgD4A5MDCgARBJMDCgAqBJMDCgBFBJMDCgBgBJMDCgB5
+BJMDCgCyBJIECgDSBJIECgAUBRQBCgAbBRQBBgBEBc0ACgCKBRQBCgC4BZIECgDzBRQBFgAWBgoG
+CgA8BiEGCgCEBhQBCgCxBp4GCgDOBhQBCgDTBhQBCgD3BpMDDgAjBw0HDgA8Bw0HAAAAAAEAAAAA
+AAEAAQABABAAMgAAAAUAAQABAAEAEABAAAAACAADAAUAAQAQAEsAAAAJAAQACwABABAAWAAAAA0A
+BAASAAEAEABkAAAADQAFABMAAAAQAG4AeAANAAYAFAAAARAApwB4ABEACAAYAAYAWAATAAYAZAAX
+ABEAkQWvAAEATwJZAAEATwJZABEAgAJjABEArQJnABEA8QKFAFAgAAAAAIYYTwEbAAEAcCAAAAAA
+xgCTAR8AAQCVIAAAAADGAaABKQAFAKggAAAAAMYBtAEpAAYAqiAAAAAAxgDLARsABwCyIAAAAADG
+ANYBGwAHAMQgAAAAAMYAtAEpAAcAUCEAAAAAgQDiAS8ACADnIgAAAACGGE8BGwAJALogAAAAAJEA
+awWqAAkA7yIAAAAAhhhPATUACgD6IgAAAACGCOwBPwANAA8jAAAAAIYI9wFDAA0AGSMAAAAAhggC
+AkgADgAiIwAAAACGCBQCTAAOADkjAAAAAIYAJgJIAA8AQSMAAAAAhgAuAkgADwBJIwAAAACGGE8B
+XQAPAFgjAAAAAIYYTwFdABAAZyMAAAAAgxhPARsAEQBwIwAAAACTCL0CawARAKkjAAAAAJMI0QJw
+ABEAsCMAAAAAkwjdAnUAEQC4IwAAAACWCAEDiQASAMsjAAAAAIYYTwEbABIAvyMAAAAAkRhRB1YB
+EgAAAAEAFQMAAAIAHQMAAAMAJwMAAAQALgMAAAEAJwMAAAEAOAMAAAEAOAMAAAEAOgIAAAEAiAUA
+AAEAJwMAAAIAPAMAAAMALgMAAAEAUAMAAAEAUAMAAAEAVgMAAAEAVgMAAAEAUANJAE8BQwBRAE8B
+QwBZAE8BQwBhAE8BQwBpAE8BQwBxAE8BQwB5AE8BQwCBAE8BQwCJAE8BQwCRAE8BQwCZAE8BkwCh
+AE8BGwAJAE8BGwCpACwFmAAJADMFnwC5AE8BGwAJAMsBGwAJANYBGwDJAE8BGwCpANMFPwCpANgF
+twCpAOsFPwCpAPgFvAAMAE8BygDZAEoG0ADZAFEG7QDZAFkGBgERAE8BNQARACcDEwERADwDFwEp
+AGIGGwERAGwGIAERAHUGJgERAHwGkwDpAE8BQwARACYCSAARAC4CSAAZAE8BGwDxAE8BGwD5AOUG
+KwH5AAAHMwE5AE8BOQERAU8BRgEhAE8BGwAuABMAogEuAGMA8QEuAAsAWgEuACsAywEuABsAywEu
+ACMAywEuADsA0QEuAFsA6AEuADMAogEuAEMAywFhAJsApQBjAIMApQBpAFsBTQGJAFsBTQHjADsB
+pQABAZsApQBAAZsApQD+AEEBBAABAAcAAwAIAAUAAAA6AlEAAABBAlUAAABwAnsAAADpAoAAAAAN
+A44AAgAMAAMAAQANAAMAAQAPAAUAAgAOAAUAAgAVAAcAAgAWAAkAAQAXAAkAAgAYAAsAwwAEgAAA
+AQAAAMsWgoAAAAAAAADwBAAACwAAAAAAAAAAAAAAAQCwAAAAAAAEAAAAAAAAAAAAAAAKAAsBAAAA
+AAQAAAAAAAAAAAAAAAoAFAEAAAAACwAAAAAAAAAAAAAAAQBVAQAAAAAEAAAAAAAAAAAAAAAKAP4F
+AAAAAAAAAAABAAAAWAcAADMA6AA1APoANwD6AAAAADxNb2R1bGU+AFNDXzZiNjg3MWQxOWNiODQx
+NzJiZWQ1MDJkYzY3ZjJmNTNkLmRsbABVc2VyQ29tcG9uZW50AFNjcmlwdE1haW4ASW5wdXQwQnVm
+ZmVyAENvbm5lY3Rpb25zAFZhcmlhYmxlcwBSZXNvdXJjZXMAU0NfNmI2ODcxZDE5Y2I4NDE3MmJl
+ZDUwMmRjNjdmMmY1M2QuUHJvcGVydGllcwBTZXR0aW5ncwBNaWNyb3NvZnQuU3FsU2VydmVyLlR4
+U2NyaXB0AE1pY3Jvc29mdC5TcWxTZXJ2ZXIuRHRzLlBpcGVsaW5lAFNjcmlwdENvbXBvbmVudABT
+Y3JpcHRCdWZmZXIAbXNjb3JsaWIAU3lzdGVtAE9iamVjdABTeXN0ZW0uQ29uZmlndXJhdGlvbgBB
+cHBsaWNhdGlvblNldHRpbmdzQmFzZQAuY3RvcgBNaWNyb3NvZnQuU3FsU2VydmVyLlBpcGVsaW5l
+SG9zdABQaXBlbGluZUJ1ZmZlcgBPdXRwdXROYW1lTWFwAFByb2Nlc3NJbnB1dABJbnB1dDBfUHJv
+Y2Vzc0lucHV0AElucHV0MF9Qcm9jZXNzSW5wdXRSb3cAUHJlRXhlY3V0ZQBQb3N0RXhlY3V0ZQBU
+cmFuc2Zvcm0AZ2V0X2dlbnJlcwBzZXRfZ2VucmVzAGdldF9nZW5yZXNfSXNOdWxsAHNldF9nZW5y
+ZXNfSXNOdWxsAE5leHRSb3cARW5kT2ZSb3dzZXQAZ2VucmVzAGdlbnJlc19Jc051bGwAUGFyZW50
+Q29tcG9uZW50AFN5c3RlbS5SZXNvdXJjZXMAUmVzb3VyY2VNYW5hZ2VyAHJlc291cmNlTWFuAFN5
+c3RlbS5HbG9iYWxpemF0aW9uAEN1bHR1cmVJbmZvAHJlc291cmNlQ3VsdHVyZQBnZXRfUmVzb3Vy
+Y2VNYW5hZ2VyAGdldF9DdWx0dXJlAHNldF9DdWx0dXJlAEN1bHR1cmUAZGVmYXVsdEluc3RhbmNl
+AGdldF9EZWZhdWx0AERlZmF1bHQASW5wdXRJRABJbnB1dE5hbWUAQnVmZmVyAE91dHB1dE1hcABS
+b3cAQnVmZmVyQ29sdW1uSW5kZXhlcwB2YWx1ZQBDb21wb25lbnQAU3lzdGVtLlJ1bnRpbWUuVmVy
+c2lvbmluZwBUYXJnZXRGcmFtZXdvcmtBdHRyaWJ1dGUAU3lzdGVtLlJlZmxlY3Rpb24AQXNzZW1i
+bHlUaXRsZUF0dHJpYnV0ZQBBc3NlbWJseURlc2NyaXB0aW9uQXR0cmlidXRlAEFzc2VtYmx5Q29u
+ZmlndXJhdGlvbkF0dHJpYnV0ZQBBc3NlbWJseUNvbXBhbnlBdHRyaWJ1dGUAQXNzZW1ibHlQcm9k
+dWN0QXR0cmlidXRlAEFzc2VtYmx5Q29weXJpZ2h0QXR0cmlidXRlAEFzc2VtYmx5VHJhZGVtYXJr
+QXR0cmlidXRlAEFzc2VtYmx5Q3VsdHVyZUF0dHJpYnV0ZQBBc3NlbWJseVZlcnNpb25BdHRyaWJ1
+dGUAU3lzdGVtLlJ1bnRpbWUuQ29tcGlsZXJTZXJ2aWNlcwBDb21waWxhdGlvblJlbGF4YXRpb25z
+QXR0cmlidXRlAFJ1bnRpbWVDb21wYXRpYmlsaXR5QXR0cmlidXRlAFNDXzZiNjg3MWQxOWNiODQx
+NzJiZWQ1MDJkYzY3ZjJmNTNkAFN0cmluZwBTdHJpbmdDb21wYXJpc29uAEVxdWFscwBHZXRDb2x1
+bW5JbmRleGVzAFNTSVNTY3JpcHRDb21wb25lbnRFbnRyeVBvaW50QXR0cmlidXRlADxJbnB1dDBf
+UHJvY2Vzc0lucHV0Um93PmJfXzAAeABGdW5jYDIAQ1MkPD45X19DYWNoZWRBbm9ueW1vdXNNZXRo
+b2REZWxlZ2F0ZTEAQ29tcGlsZXJHZW5lcmF0ZWRBdHRyaWJ1dGUAVHJpbQBJc051bGxPcldoaXRl
+U3BhY2UAVG9Mb3dlcgBDaGFyAFNwbGl0AFN5c3RlbS5Db3JlAFN5c3RlbS5MaW5xAEVudW1lcmFi
+bGUAU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMASUVudW1lcmFibGVgMQBTZWxlY3QAVG9BcnJh
+eQBDb250YWlucwBHZXRTdHJpbmcAc2V0X0l0ZW0ASXNOdWxsAFNldE51bGwASW52YWxpZE9wZXJh
+dGlvbkV4Y2VwdGlvbgBTeXN0ZW0uRGlhZ25vc3RpY3MARGVidWdnZXJOb25Vc2VyQ29kZUF0dHJp
+YnV0ZQBUeXBlAFJ1bnRpbWVUeXBlSGFuZGxlAEdldFR5cGVGcm9tSGFuZGxlAEFzc2VtYmx5AGdl
+dF9Bc3NlbWJseQBTeXN0ZW0uQ29tcG9uZW50TW9kZWwARWRpdG9yQnJvd3NhYmxlQXR0cmlidXRl
+AEVkaXRvckJyb3dzYWJsZVN0YXRlAC5jY3RvcgBTQ182YjY4NzFkMTljYjg0MTcyYmVkNTAyZGM2
+N2YyZjUzZC5Qcm9wZXJ0aWVzLlJlc291cmNlcy5yZXNvdXJjZXMAAAAPSQBuAHAAdQB0ACAAMAAA
+B3YALgBhAAARbgBoAKEeYwAgAHQAcgC7HgETbgBoAKEeYwAgAHYAaQDHHnQAARF2AGkAxx50ACAA
+bgBhAG0AAQt2AC0AcABvAHAAAQl2AHAAbwBwAAATbgBoAKEeYwAgAFYAaQDHHnQAARFuAGgAoR5j
+ACAAaADgAG4AARFoAOAAbgAgAHEAdQDRHmMAAQlrAHAAbwBwAAALawAtAHAAbwBwAAERbgBoAKEe
+YwAgAEgA4ABuAAETbgBoAKEeYwAgAG4AaACtHnQAARFuAGgArR50ACAAYgCjHm4AAQtqAC0AcABv
+AHAAAQlqAHAAbwBwAAATbgBoAKEeYwAgAE4AaACtHnQAARFuAGgAoR5jACAAaABvAGEAARV0AHIA
+dQBuAGcAIABxAHUA0R5jAAEfbgBoAKEeYwAgAHQAcgB1AG4AZwAgAHEAdQDRHmMAARFuAGgAoR5j
+ACAASABvAGEAAQt1AHMALwB1AGsAAAt1AHMALQB1AGsAAQviAHUAIABtAPkeAQviAHUALwBtAPke
+ARVuAGgAoR5jACAAwgB1AC8ATQD5HgEPdAB1AGkAIABoAOEAdAABE2sAaAD0AG4AZwAgAGwA3R5p
+AAEPaADyAGEAIAB0AKUedQABHW4AaAChHmMAIABrAGgA9ABuAGcAIABsAN0eaQABGW4AaAChHmMA
+IABoAPIAYQAgAHQApR51AAGAm0kAcwBOAHUAbABsACAAcAByAG8AcABlAHIAdAB5ACAAYwBhAG4A
+bgBvAHQAIABiAGUAIABzAGUAdAAgAHQAbwAgAEYAYQBsAHMAZQAuACAAQQBzAHMAaQBnAG4AIABh
+ACAAdgBhAGwAdQBlACAAdABvACAAdABoAGUAIABjAG8AbAB1AG0AbgAgAGkAbgBzAHQAZQBhAGQA
+LgAAcVMAQwBfADYAYgA2ADgANwAxAGQAMQA5AGMAYgA4ADQAMQA3ADIAYgBlAGQANQAwADIAZABj
+ADYANwBmADIAZgA1ADMAZAAuAFAAcgBvAHAAZQByAHQAaQBlAHMALgBSAGUAcwBvAHUAcgBjAGUA
+cwAAAAAsRbxkbMacRIP0+eDsu/HHAAiJhF3NgIDMkQi3elxWGTTgiQMGEhQDBhIYAyAAAQkgBAEI
+DhIVEhkFIAEBEhAFIAEOHQ4JIAMBEhUdCBIZAyAADgQgAQEOAyAAAgQgAQECAygADgMoAAIDBhIF
+BSABARIFAwYSHQMGEiEEAAASHQQAABIhBQABARIhBAgAEh0ECAASIQMGEiAEAAASIAQIABIgBCAB
+AQgGIAICDhFZBSABHQgIBAEAAAAEAAEODgcGFRJhAg4OBAABAg4GIAEdDh0DBhUSYQIODgUgAgEc
+GBcQAgIVEnEBHgEVEnEBHgAVEmECHgAeAQQKAg4ODBABAR0eABUScQEeAAMKAQ4HBwMOHQ4dAwwQ
+AQICFRJxAR4AHgADBhIVAwYdCAQgAQ4IBSACAQgcBCABAggHAAESfRGAgQUgABKAhQcgAgEOEoCF
+BAcBEh0GIAEBEYCNCAEAAgAAAAAAAwAAAUcBABouTkVURnJhbWV3b3JrLFZlcnNpb249djQuMAEA
+VA4URnJhbWV3b3JrRGlzcGxheU5hbWUQLk5FVCBGcmFtZXdvcmsgNCgBACNTQ182YjY4NzFkMTlj
+Yjg0MTcyYmVkNTAyZGM2N2YyZjUzZAAABQEAAAAAFgEAEUNvcHlyaWdodCBAICAyMDE1AAAIAQAI
+AAAAAAAeAQABAFQCFldyYXBOb25FeGNlcHRpb25UaHJvd3MBIDgAAAAAAAAAAAAAPjgAAAAgAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAADA4AAAAAAAAAAAAAAAAAAAAAF9Db3JEbGxNYWluAG1zY29yZWUu
+ZGxsAAAAAAD/JQAgABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AQAQAAAAGAAAgAAAAAAAAAAAAAAAAAAAAQABAAAAMAAAgAAAAAAAAAAAAAAAAAAAAQAAAAAASAAA
+AFhAAACwAwAAAAAAAAAAAACwAzQAAABWAFMAXwBWAEUAUgBTAEkATwBOAF8ASQBOAEYATwAAAAAA
+vQTv/gAAAQAAAAEAgoDLFgAAAQCCgMsWPwAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAEQAAAAB
+AFYAYQByAEYAaQBsAGUASQBuAGYAbwAAAAAAJAAEAAAAVAByAGEAbgBzAGwAYQB0AGkAbwBuAAAA
+AAAAALAEEAMAAAEAUwB0AHIAaQBuAGcARgBpAGwAZQBJAG4AZgBvAAAA7AIAAAEAMAAwADAAMAAw
+ADQAYgAwAAAAcAAkAAEARgBpAGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4AAAAAAFMAQwBfADYA
+YgA2ADgANwAxAGQAMQA5AGMAYgA4ADQAMQA3ADIAYgBlAGQANQAwADIAZABjADYANwBmADIAZgA1
+ADMAZAAAAEAADwABAEYAaQBsAGUAVgBlAHIAcwBpAG8AbgAAAAAAMQAuADAALgA1ADgAMwA1AC4A
+MwAyADgAOQA4AAAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAAAFMAQwBfADYAYgA2
+ADgANwAxAGQAMQA5AGMAYgA4ADQAMQA3ADIAYgBlAGQANQAwADIAZABjADYANwBmADIAZgA1ADMA
+ZAAuAGQAbABsAAAASAASAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0AAAAQwBvAHAAeQBy
+AGkAZwBoAHQAIABAACAAIAAyADAAMQA1AAAAeAAoAAEATwByAGkAZwBpAG4AYQBsAEYAaQBsAGUA
+bgBhAG0AZQAAAFMAQwBfADYAYgA2ADgANwAxAGQAMQA5AGMAYgA4ADQAMQA3ADIAYgBlAGQANQAw
+ADIAZABjADYANwBmADIAZgA1ADMAZAAuAGQAbABsAAAAaAAkAAEAUAByAG8AZAB1AGMAdABOAGEA
+bQBlAAAAAABTAEMAXwA2AGIANgA4ADcAMQBkADEAOQBjAGIAOAA0ADEANwAyAGIAZQBkADUAMAAy
+AGQAYwA2ADcAZgAyAGYANQAzAGQAAABEAA8AAQBQAHIAbwBkAHUAYwB0AFYAZQByAHMAaQBvAG4A
+AAAxAC4AMAAuADUAOAAzADUALgAzADIAOAA5ADgAAAAAAEgADwABAEEAcwBzAGUAbQBiAGwAeQAg
+AFYAZQByAHMAaQBvAG4AAAAxAC4AMAAuADUAOAAzADUALgAzADIAOAA5ADgAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAMAAAAUDgAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
+                      </arrayElements>
+                    </property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the Microsoft Visual Studio Tools for Applications project. Project names must be unique within a package."
+                      name="VSTAProjectName"
+                      typeConverter="NOTBROWSABLE">SC_6b6871d19cb84172bed502dc67f2f53d</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the programming language used by the script."
+                      name="ScriptLanguage"
+                      typeConverter="Microsoft.SqlServer.VSTAHosting.ScriptingLanguages, Microsoft.SqlServer.VSTAScriptingLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">CSharp</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a comma-separated list of read-only variables."
+                      name="ReadOnlyVariables"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIVariablePickerDlg, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a comma-separated list of read/write variables."
+                      name="ReadWriteVariables"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIWriteableVariablePickerDlg, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.String"
+                      description="List of breakpoints present on the script."
+                      isArray="true"
+                      name="BreakpointCollection"
+                      typeConverter="NOTBROWSABLE">
+                      <arrayElements
+                        arrayElementCount="0" />
+                    </property>
+                    <property
+                      dataType="System.String"
+                      description="Checksum to match component metedata against compiled codes."
+                      name="MetadataChecksum"
+                      typeConverter="NOTBROWSABLE">a9c8994be4acb8e53bfc6cc4bd128ec5</property>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">Microsoft.SqlServer.Dts.Pipeline.ScriptComponentHost, Microsoft.SqlServer.TxScript, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Tranform Genre.Inputs[Input 0]"
+                      hasSideEffects="true"
+                      name="Input 0">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Tranform Genre.Inputs[Input 0].Columns[genres]"
+                          cachedDataType="wstr"
+                          cachedLength="500"
+                          cachedName="genres"
+                          lineageId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Csv Source.Outputs[Flat File Source Output].Columns[genres]"
+                          usageType="readWrite" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Tranform Genre.Outputs[Output 0]"
+                      name="Output 0"
+                      synchronousInputId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Tranform Genre.Inputs[Input 0]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Tranform Performers"
+                  componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+                  contactInfo="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;8"
+                  description="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum."
+                  name="Tranform Performers"
+                  version="8">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Stores the source code of the component"
+                      isArray="true"
+                      name="SourceCode"
+                      state="cdata">
+                      <arrayElements
+                        arrayElementCount="30">
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\AssemblyInfo.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("SC_30db04a243444e97b87ecedcf7581075")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("SC_30db04a243444e97b87ecedcf7581075")]
+[assembly: AssemblyCopyright("Copyright @  2015")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\Resources.resx]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[main.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[#region Help:  Introduction to the Script Component
+/* The Script Component allows you to perform virtually any operation that can be accomplished in
+ * a .Net application within the context of an Integration Services data flow.
+ *
+ * Expand the other regions which have "Help" prefixes for examples of specific ways to use
+ * Integration Services features within this script component. */
+#endregion
+
+#region Namespaces
+using System;
+using System.Linq;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+#endregion
+
+/// <summary>
+/// This is the class to which to add your code.  Do not change the name, attributes, or parent
+/// of this class.
+/// </summary>
+[Microsoft.SqlServer.Dts.Pipeline.SSISScriptComponentEntryPointAttribute]
+public class ScriptMain : UserComponent
+{
+    #region Help:  Using Integration Services variables and parameters
+    /* To use a variable in this script, first ensure that the variable has been added to
+     * either the list contained in the ReadOnlyVariables property or the list contained in
+     * the ReadWriteVariables property of this script component, according to whether or not your
+     * code needs to write into the variable.  To do so, save this script, close this instance of
+     * Visual Studio, and update the ReadOnlyVariables and ReadWriteVariables properties in the
+     * Script Transformation Editor window.
+     * To use a parameter in this script, follow the same steps. Parameters are always read-only.
+     *
+     * Example of reading from a variable or parameter:
+     *  DateTime startTime = Variables.MyStartTime;
+     *
+     * Example of writing to a variable:
+     *  Variables.myStringVariable = "new value";
+     */
+    #endregion
+
+    #region Help:  Using Integration Services Connnection Managers
+    /* Some types of connection managers can be used in this script component.  See the help topic
+     * "Working with Connection Managers Programatically" for details.
+     *
+     * To use a connection manager in this script, first ensure that the connection manager has
+     * been added to either the list of connection managers on the Connection Managers page of the
+     * script component editor.  To add the connection manager, save this script, close this instance of
+     * Visual Studio, and add the Connection Manager to the list.
+     *
+     * If the component needs to hold a connection open while processing rows, override the
+     * AcquireConnections and ReleaseConnections methods.
+     * 
+     * Example of using an ADO.Net connection manager to acquire a SqlConnection:
+     *  object rawConnection = Connections.SalesDB.AcquireConnection(transaction);
+     *  SqlConnection salesDBConn = (SqlConnection)rawConnection;
+     *
+     * Example of using a File connection manager to acquire a file path:
+     *  object rawConnection = Connections.Prices_zip.AcquireConnection(transaction);
+     *  string filePath = (string)rawConnection;
+     *
+     * Example of releasing a connection manager:
+     *  Connections.SalesDB.ReleaseConnection(rawConnection);
+     */
+    #endregion
+
+    #region Help:  Firing Integration Services Events
+    /* This script component can fire events.
+     *
+     * Example of firing an error event:
+     *  ComponentMetaData.FireError(10, "Process Values", "Bad value", "", 0, out cancel);
+     *
+     * Example of firing an information event:
+     *  ComponentMetaData.FireInformation(10, "Process Values", "Processing has started", "", 0, fireAgain);
+     *
+     * Example of firing a warning event:
+     *  ComponentMetaData.FireWarning(10, "Process Values", "No rows were received", "", 0);
+     */
+    #endregion
+
+    /// <summary>
+    /// This method is called once, before rows begin to be processed in the data flow.
+    ///
+    /// You can remove this method if you don't need to do anything here.
+    /// </summary>
+    public override void PreExecute()
+    {
+        base.PreExecute();
+        /*
+         * Add your code here
+         */
+    }
+
+    /// <summary>
+    /// This method is called after all the rows have passed through this component.
+    ///
+    /// You can delete this method if you don't need to do anything here.
+    /// </summary>
+    public override void PostExecute()
+    {
+        base.PostExecute();
+        /*
+         * Add your code here
+         */
+    }
+
+    /// <summary>
+    /// This method is called once for every row that passes through the component from Input0.
+    ///
+    /// Example of reading a value from a column in the the row:
+    ///  string zipCode = Row.ZipCode
+    ///
+    /// Example of writing a value to a column in the row:
+    ///  Row.ZipCode = zipCode
+    /// </summary>
+    /// <param name="Row">The row that is currently passing through the component</param>
+    public override void Input0_ProcessInputRow(Input0Buffer Row)
+    {
+        /*
+         * Add your code here
+         */
+        string[] split = Row.singers.Split(',');
+        var sorted = split.Select(x => x.Trim()).OrderBy(x => x);
+        Row.singers = string.Join(", ", sorted);
+        Row.IsGroup = split.Length > 1;
+    }
+
+}
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[BufferWrapper.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services buffer wrappers
+*  This module defines classes for accessing data flow buffers
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+
+public class Input0Buffer: ScriptBuffer
+
+{
+    public Input0Buffer(PipelineBuffer Buffer, int[] BufferColumnIndexes, OutputNameMap OutputMap)
+        : base(Buffer, BufferColumnIndexes, OutputMap)
+    {
+    }
+
+    public String singers
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[0]);
+        }
+        set
+        {
+            this[0] = value;
+        }
+    }
+    public bool singers_IsNull
+    {
+        get
+        {
+            return IsNull(0);
+        }
+        set
+        {
+            if (value)
+            {
+                SetNull(0);
+            }
+            else
+            {
+                throw new InvalidOperationException("IsNull property cannot be set to False. Assign a value to the column instead.");
+            }
+        }
+    }
+
+    public Boolean IsGroup
+    {
+        set
+        {
+            this[1] = value;
+        }
+    }
+    public bool IsGroup_IsNull
+    {
+        set
+        {
+            if (value)
+            {
+                SetNull(1);
+            }
+            else
+            {
+                throw new InvalidOperationException("IsNull property cannot be set to False. Assign a value to the column instead.");
+            }
+        }
+    }
+
+    new public bool NextRow()
+    {
+        return base.NextRow();
+    }
+
+    new public bool EndOfRowset()
+    {
+        return base.EndOfRowset();
+    }
+
+}
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\Settings.Designer.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_30db04a243444e97b87ecedcf7581075.Properties.Settings.get_Default():SC_30db04a243444e97b87ecedcf7581075.Properties.Sett" +
+    "ings")]
+
+namespace SC_30db04a243444e97b87ecedcf7581075.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[ComponentWrapper.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services component wrapper
+*  This module defines the base class for your component
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+
+public class UserComponent: ScriptComponent
+{
+    public Connections Connections;
+    public Variables Variables;
+    public UserComponent()
+    {
+        Connections = new Connections(this);
+        Variables = new Variables(this);
+    }
+
+    public override void ProcessInput(int InputID, string InputName, PipelineBuffer Buffer, OutputNameMap OutputMap)
+    {
+
+        if (InputName.Equals(@"Input 0", StringComparison.Ordinal))
+        {
+            Input0_ProcessInput(new Input0Buffer(Buffer, GetColumnIndexes(InputID), OutputMap));
+        }
+
+    }
+
+    public virtual void Input0_ProcessInput(Input0Buffer Buffer)
+    {
+        while (Buffer.NextRow())
+        {
+            Input0_ProcessInputRow(Buffer);
+        }
+    }
+
+    public virtual void Input0_ProcessInputRow(Input0Buffer Row)
+    {
+    }
+
+}
+
+public class Connections
+{
+    ScriptComponent ParentComponent;
+
+    public Connections(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+
+public class Variables
+{
+    ScriptComponent ParentComponent;
+
+    public Variables(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Project]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF16LE]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="3.0" schemaVersion="1.0">
+	<msb:PropertyGroup>
+		<msb:CodeName>SC_30db04a243444e97b87ecedcf7581075</msb:CodeName>
+		<msb:Language>msBuild</msb:Language>
+		<msb:DisplayName>SC_30db04a243444e97b87ecedcf7581075</msb:DisplayName>
+		<msb:ProjectId>{AA70183C-BAE7-4728-95AF-202CF8CB9AF7}</msb:ProjectId>
+	</msb:PropertyGroup>
+	<msb:ItemGroup>
+		<msb:Project Include="SC_30db04a243444e97b87ecedcf7581075.csproj"/>
+		<msb:File Include="Properties\AssemblyInfo.cs"/>
+		<msb:File Include="Properties\Settings.settings"/>
+		<msb:File Include="Properties\Resources.resx"/>
+		<msb:File Include="Properties\Resources.Designer.cs"/>
+		<msb:File Include="Properties\Settings.Designer.cs"/>
+		<msb:File Include="main.cs"/>
+		<msb:File Include="BufferWrapper.cs"/>
+		<msb:File Include="ComponentWrapper.cs"/>
+	</msb:ItemGroup>
+</c:Project>]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[SC_30db04a243444e97b87ecedcf7581075.csproj]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ab1abc14-ab19-4ae1-92da-7579eb31dbef}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SC_30db04a243444e97b87ecedcf7581075</RootNamespace>
+    <AssemblyName>SC_30db04a243444e97b87ecedcf7581075</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.TxScript, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.PipelineHost, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Compile Include="main.cs" />
+    <Compile Include="BufferWrapper.cs" />
+    <Compile Include="ComponentWrapper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <!-- Include the build rules for a C# project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- This section defines VSTA properties that describe the host-changable project properties. -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="ScriptComponent" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" DebugInfoExeName="" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" />
+        <Host Name="ScriptComponent" GeneratedNamespace="SC_30db04a243444e97b87ecedcf7581075" IconIndex="0"></Host>
+        <ProjectClient>
+          <HostIdentifier>SSIS_SC110</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\Settings.settings]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\Resources.Designer.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_30db04a243444e97b87ecedcf7581075.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+    "rceManager")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_30db04a243444e97b87ecedcf7581075.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+    "fo")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_30db04a243444e97b87ecedcf7581075.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+    "):Void")]
+
+namespace SC_30db04a243444e97b87ecedcf7581075.Properties {
+    
+    
+    /// <summary>
+    ///   A strongly-typed resource class, for looking up localized strings, etc.
+    /// </summary>
+    // This class was auto-generated by the StronglyTypedResourceBuilder
+    // class via a tool like ResGen or Visual Studio.
+    // To add or remove a member, edit your .ResX file then rerun ResGen
+    // with the /str option, or rebuild your VS project.
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    internal class Resources {
+        
+        private static global::System.Resources.ResourceManager resourceMan;
+        
+        private static global::System.Globalization.CultureInfo resourceCulture;
+        
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        internal Resources() {
+        }
+        
+        /// <summary>
+        ///   Returns the cached ResourceManager instance used by this class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if ((resourceMan == null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SC_30db04a243444e97b87ecedcf7581075.Properties.Resources", typeof(Resources).Assembly);
+                    resourceMan = temp;
+                }
+                return resourceMan;
+            }
+        }
+        
+        /// <summary>
+        ///   Overrides the current thread's CurrentUICulture property for all
+        ///   resource lookups using this strongly typed resource class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
+                return resourceCulture;
+            }
+            set {
+                resourceCulture = value;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                      </arrayElements>
+                    </property>
+                    <property
+                      dataType="System.String"
+                      description="Stores the binary representation of the component"
+                      isArray="true"
+                      name="BinaryCode"
+                      state="cdata">
+                      <arrayElements
+                        arrayElementCount="2">
+                        <arrayElement
+                          dataType="System.String"><![CDATA[SC_30db04a243444e97b87ecedcf7581075.dll]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDANh9elYAAAAAAAAAAOAAAiELAQsAABYAAAAIAAAAAAAAjjUA
+AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAEAAAAAAAAAACAAAAAAgAAAAAAAAMAQIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAEA1AABLAAAAAEAAAAgEAAAAAAAAAAAAAAAAAAAA
+AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAlBUAAAAgAAAAFgAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAAgEAAAAQAAAAAYAAAAYAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAHgAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAABw
+NQAAAAAAAEgAAAACAAUAICMAACASAAABAAAAAAAAAGgiAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAH4CKA0AAAoCAnMUAAAGfQEAAAQCAnMVAAAGfQIAAAQqkgRy
+AQAAcBpvDgAACiwVAgUCAygPAAAKDgRzCwAABm8DAAAGKkorBwIDbwQAAAYDbxIAAAYt8SoGKh4C
+KBEAAAoqHgIoEgAACioeAm8UAAAKKgoCKgAAABMwBAB9AAAAAQAAEQNvDAAABheNGgAAAQwIFh8s
+nQhvFQAACgoGfgMAAAQtERT+BgkAAAZzFgAACoADAAAEfgMAAAQoAQAAK34EAAAELREU/gYKAAAG
+cxYAAAqABAAABH4EAAAEKAIAACsLA3IRAABwBygZAAAKbw0AAAYDBo5pF/4CbxAAAAYqHgIoAQAA
+BioqAgMEBSgaAAAKKlICexsAAAoCexwAAAoWlG8dAAAKKiYCFgMoHgAACioiAhYoHwAACipaAywI
+AhYoIAAACipyFwAAcHMhAAAKejoCFwOMHwAAASgeAAAKKloDLAgCFyggAAAKKnIXAABwcyEAAAp6
+HgIoIgAACioeAigjAAAKKjoCKCQAAAoCA30FAAAEKjoCKCQAAAoCA30GAAAEKh4CKCQAAAoqABMw
+AgAtAAAAAgAAEX4HAAAELSBytAAAcNAHAAACKCYAAApvJwAACnMoAAAKCgaABwAABH4HAAAEKhp+
+CAAABCoeAoAIAAAEKhp+CQAABCoucxsAAAaACQAABCoeAigqAAAKKgAAAAAAtAAAAM7K774BAAAA
+kQAAAGxTeXN0ZW0uUmVzb3VyY2VzLlJlc291cmNlUmVhZGVyLCBtc2NvcmxpYiwgVmVyc2lvbj00
+LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkj
+U3lzdGVtLlJlc291cmNlcy5SdW50aW1lUmVzb3VyY2VTZXQCAAAAAAAAAAAAAABQQURQQURQtAAA
+AEJTSkIBAAEAAAAAAAwAAAB2NC4wLjMwMzE5AAAAAAUAbAAAAFwGAAAjfgAAyAYAABAIAAAjU3Ry
+aW5ncwAAAADYDgAAKAEAACNVUwAAEAAAEAAAACNHVUlEAAAAEBAAABACAAAjQmxvYgAAAAAAAAAC
+AAABVxWiCQkJAAAA+iUzABYAAAEAAAAlAAAACAAAAAkAAAAcAAAAEwAAACoAAAATAAAAAgAAAAMA
+AAAHAAAACgAAAAEAAAABAAAABQAAAAEAAAACAAAAAAAKAAEAAAAAAAYA7gDNAAYA/gDNAAoAGwEU
+AQ4ANwEiARIAdgHNAAYAhQHNAAoAogKRAgoA0wK+AgoArAOSAwoA1wPFAwoA7gPFAwoACwTFAwoA
+KgTFAwoAQwTFAwoAXATFAwoAdwTFAwoAkgTFAwoAqwTFAwoA5ATEBAoABAXEBAoARgUUAQoATQUU
+AQYAdgXNAAoAvAUUAQoA6gXEBAoATgYUARYAcQZlBgoAlwZ8BhYArAZlBgoA8AYUAQoACgcUAQoA
+JQcSBwoAQgcUAQoARwcUAQoAawfFAw4AlweBBw4AsAeBBwAAAAABAAAAAAABAAEAAQAQADIAAAAF
+AAEAAQABABAAQAAAAAgAAwAFAAEAEABLAAAACQAFAAsAAQAQAFgAAAANAAUAFAABABAAZAAAAA0A
+BgAVAAAAEABuAHgADQAHABYAAAEQAKcAeAARAAkAGgAGAFgAEwAGAGQAFwARAMMFqQARACIGqQAB
+AIECUwABAIECUwARALICXQARAN8CYQARACMDfwBQIAAAAACGGE8BGwABAHAgAAAAAMYAkwEfAAEA
+lSAAAAAAxgGgASkABQCoIAAAAADGAbQBKQAGAKogAAAAAMYAywEbAAcAsiAAAAAAxgDWARsABwDI
+IAAAAADGALQBKQAHAFEhAAAAAIYYTwEbAAgAuiAAAAAAkQCdBaQACADCIAAAAACRAAUGpAAJAFkh
+AAAAAIYYTwEvAAoAZCEAAAAAhgjiATkADQB5IQAAAACGCO4BPQANAIMhAAAAAIYI+gFCAA4AjCEA
+AAAAhggNAkYADgCjIQAAAACGCCACRgAPALIhAAAAAIYILAJGABAAySEAAAAAhgA/AkIAEQDRIQAA
+AACGAEcCQgARANkhAAAAAIYYTwFXABEA6CEAAAAAhhhPAVcAEgD3IQAAAACDGE8BGwATAAAiAAAA
+AJMI7wJlABMAOSIAAAAAkwgDA2oAEwBAIgAAAACTCA8DbwATAEgiAAAAAJYIMwODABQAWyIAAAAA
+hhhPARsAFABPIgAAAACRGMUHVAEUAAAAAQBHAwAAAgBPAwAAAwBZAwAABABgAwAAAQBZAwAAAQBq
+AwAAAQBqAwAAAQC6BQAAAQC6BQAAAQBZAwAAAgBuAwAAAwBgAwAAAQCCAwAAAQCCAwAAAQCCAwAA
+AQCCAwAAAQCIAwAAAQCIAwAAAQCCA0kATwE9AFEATwE9AFkATwE9AGEATwE9AGkATwE9AHEATwE9
+AHkATwE9AIEATwE9AIkATwE9AJEATwE9AJkATwGNAKEATwEbAAkATwEbAKkAXgWSAAkAZQWZALkA
+TwEbAAkAywEbAAkA1gEbAMkATwEbAKkASQY5AKkAUwaxAAwATwG/ANkApQbFANkAwQbiAKkAyQb6
+ABEATwEvABEAWQMQAREAbgMUASkAzgYYAREA2AYdAREA4QYjAREA6AaNAPEATwE9ABEAPwJCABEA
+RwJCABkATwEbAAEBTwEbAAkBWQcoAQkBdAcxATkATwE3ASEBTwFEASEATwEbAC4ACwBYAS4AYwDv
+AS4AKwDJAS4AWwDmAS4AGwDJAS4AIwDJAS4AEwCgAS4AMwCgAS4AOwDPAS4AQwDJAWEAmwCfAGMA
+gwCfAIEAmwCfAKkASwFLAckASwFLAeMAKwGfACABmwCfACEBmwCfAEABmwCfAAQBPwEEAAEABwAF
+AAgABwAAAFMCSwAAAFsCTwAAAGoCTwAAAHICTwAAAKICdQAAABsDegAAAD8DiAACAAwAAwABAA0A
+AwACAA4ABQABAA8ABQABABAABwABABEACQACABcACwACABgADQABABkADQACABoADwC4AASAAAAB
+AAAAyxYkfgAAAAAAACIFAAALAAAAAAAAAAAAAAABALAAAAAAAAQAAAAAAAAAAAAAAAoACwEAAAAA
+BAAAAAAAAAAAAAAACgAUAQAAAAALAAAAAAAAAAAAAAABAFUBAAAAAAQAAAAAAAAAAAAAAAoAWQYA
+AAAAAAAAAAEAAADMBwAALwDdADEA3QAAAAAAADxNb2R1bGU+AFNDXzMwZGIwNGEyNDM0NDRlOTdi
+ODdlY2VkY2Y3NTgxMDc1LmRsbABVc2VyQ29tcG9uZW50AFNjcmlwdE1haW4ASW5wdXQwQnVmZmVy
+AENvbm5lY3Rpb25zAFZhcmlhYmxlcwBSZXNvdXJjZXMAU0NfMzBkYjA0YTI0MzQ0NGU5N2I4N2Vj
+ZWRjZjc1ODEwNzUuUHJvcGVydGllcwBTZXR0aW5ncwBNaWNyb3NvZnQuU3FsU2VydmVyLlR4U2Ny
+aXB0AE1pY3Jvc29mdC5TcWxTZXJ2ZXIuRHRzLlBpcGVsaW5lAFNjcmlwdENvbXBvbmVudABTY3Jp
+cHRCdWZmZXIAbXNjb3JsaWIAU3lzdGVtAE9iamVjdABTeXN0ZW0uQ29uZmlndXJhdGlvbgBBcHBs
+aWNhdGlvblNldHRpbmdzQmFzZQAuY3RvcgBNaWNyb3NvZnQuU3FsU2VydmVyLlBpcGVsaW5lSG9z
+dABQaXBlbGluZUJ1ZmZlcgBPdXRwdXROYW1lTWFwAFByb2Nlc3NJbnB1dABJbnB1dDBfUHJvY2Vz
+c0lucHV0AElucHV0MF9Qcm9jZXNzSW5wdXRSb3cAUHJlRXhlY3V0ZQBQb3N0RXhlY3V0ZQBnZXRf
+c2luZ2VycwBzZXRfc2luZ2VycwBnZXRfc2luZ2Vyc19Jc051bGwAc2V0X3NpbmdlcnNfSXNOdWxs
+AHNldF9Jc0dyb3VwAHNldF9Jc0dyb3VwX0lzTnVsbABOZXh0Um93AEVuZE9mUm93c2V0AHNpbmdl
+cnMAc2luZ2Vyc19Jc051bGwASXNHcm91cABJc0dyb3VwX0lzTnVsbABQYXJlbnRDb21wb25lbnQA
+U3lzdGVtLlJlc291cmNlcwBSZXNvdXJjZU1hbmFnZXIAcmVzb3VyY2VNYW4AU3lzdGVtLkdsb2Jh
+bGl6YXRpb24AQ3VsdHVyZUluZm8AcmVzb3VyY2VDdWx0dXJlAGdldF9SZXNvdXJjZU1hbmFnZXIA
+Z2V0X0N1bHR1cmUAc2V0X0N1bHR1cmUAQ3VsdHVyZQBkZWZhdWx0SW5zdGFuY2UAZ2V0X0RlZmF1
+bHQARGVmYXVsdABJbnB1dElEAElucHV0TmFtZQBCdWZmZXIAT3V0cHV0TWFwAFJvdwBCdWZmZXJD
+b2x1bW5JbmRleGVzAHZhbHVlAENvbXBvbmVudABTeXN0ZW0uUnVudGltZS5WZXJzaW9uaW5nAFRh
+cmdldEZyYW1ld29ya0F0dHJpYnV0ZQBTeXN0ZW0uUmVmbGVjdGlvbgBBc3NlbWJseVRpdGxlQXR0
+cmlidXRlAEFzc2VtYmx5RGVzY3JpcHRpb25BdHRyaWJ1dGUAQXNzZW1ibHlDb25maWd1cmF0aW9u
+QXR0cmlidXRlAEFzc2VtYmx5Q29tcGFueUF0dHJpYnV0ZQBBc3NlbWJseVByb2R1Y3RBdHRyaWJ1
+dGUAQXNzZW1ibHlDb3B5cmlnaHRBdHRyaWJ1dGUAQXNzZW1ibHlUcmFkZW1hcmtBdHRyaWJ1dGUA
+QXNzZW1ibHlDdWx0dXJlQXR0cmlidXRlAEFzc2VtYmx5VmVyc2lvbkF0dHJpYnV0ZQBTeXN0ZW0u
+UnVudGltZS5Db21waWxlclNlcnZpY2VzAENvbXBpbGF0aW9uUmVsYXhhdGlvbnNBdHRyaWJ1dGUA
+UnVudGltZUNvbXBhdGliaWxpdHlBdHRyaWJ1dGUAU0NfMzBkYjA0YTI0MzQ0NGU5N2I4N2VjZWRj
+Zjc1ODEwNzUAU3RyaW5nAFN0cmluZ0NvbXBhcmlzb24ARXF1YWxzAEdldENvbHVtbkluZGV4ZXMA
+U1NJU1NjcmlwdENvbXBvbmVudEVudHJ5UG9pbnRBdHRyaWJ1dGUAPElucHV0MF9Qcm9jZXNzSW5w
+dXRSb3c+Yl9fMAB4AEZ1bmNgMgBDUyQ8PjlfX0NhY2hlZEFub255bW91c01ldGhvZERlbGVnYXRl
+MgBDb21waWxlckdlbmVyYXRlZEF0dHJpYnV0ZQA8SW5wdXQwX1Byb2Nlc3NJbnB1dFJvdz5iX18x
+AENTJDw+OV9fQ2FjaGVkQW5vbnltb3VzTWV0aG9kRGVsZWdhdGUzAFRyaW0AQ2hhcgBTcGxpdABT
+eXN0ZW0uQ29yZQBTeXN0ZW0uTGlucQBFbnVtZXJhYmxlAFN5c3RlbS5Db2xsZWN0aW9ucy5HZW5l
+cmljAElFbnVtZXJhYmxlYDEAU2VsZWN0AElPcmRlcmVkRW51bWVyYWJsZWAxAE9yZGVyQnkASm9p
+bgBHZXRTdHJpbmcAc2V0X0l0ZW0ASXNOdWxsAFNldE51bGwASW52YWxpZE9wZXJhdGlvbkV4Y2Vw
+dGlvbgBCb29sZWFuAFN5c3RlbS5EaWFnbm9zdGljcwBEZWJ1Z2dlck5vblVzZXJDb2RlQXR0cmli
+dXRlAFR5cGUAUnVudGltZVR5cGVIYW5kbGUAR2V0VHlwZUZyb21IYW5kbGUAQXNzZW1ibHkAZ2V0
+X0Fzc2VtYmx5AFN5c3RlbS5Db21wb25lbnRNb2RlbABFZGl0b3JCcm93c2FibGVBdHRyaWJ1dGUA
+RWRpdG9yQnJvd3NhYmxlU3RhdGUALmNjdG9yAFNDXzMwZGIwNGEyNDM0NDRlOTdiODdlY2VkY2Y3
+NTgxMDc1LlByb3BlcnRpZXMuUmVzb3VyY2VzLnJlc291cmNlcwAAAA9JAG4AcAB1AHQAIAAwAAAF
+LAAgAACAm0kAcwBOAHUAbABsACAAcAByAG8AcABlAHIAdAB5ACAAYwBhAG4AbgBvAHQAIABiAGUA
+IABzAGUAdAAgAHQAbwAgAEYAYQBsAHMAZQAuACAAQQBzAHMAaQBnAG4AIABhACAAdgBhAGwAdQBl
+ACAAdABvACAAdABoAGUAIABjAG8AbAB1AG0AbgAgAGkAbgBzAHQAZQBhAGQALgAAcVMAQwBfADMA
+MABkAGIAMAA0AGEAMgA0ADMANAA0ADQAZQA5ADcAYgA4ADcAZQBjAGUAZABjAGYANwA1ADgAMQAw
+ADcANQAuAFAAcgBvAHAAZQByAHQAaQBlAHMALgBSAGUAcwBvAHUAcgBjAGUAcwAAAAD4n0gDseDb
+Sq/h1aYitV7nAAiJhF3NgIDMkQi3elxWGTTgiQMGEhQDBhIYAyAAAQkgBAEIDhIVEhkFIAEBEhAJ
+IAMBEhUdCBIZAyAADgQgAQEOAyAAAgQgAQECAygADgMoAAIDBhIFBSABARIFAwYSHQMGEiEEAAAS
+HQQAABIhBQABARIhBAgAEh0ECAASIQMGEiAEAAASIAQIABIgBCABAQgGIAICDhFZBSABHQgIBAEA
+AAAEAAEODgcGFRJhAg4OBiABHQ4dAwYVEmECDg4FIAIBHBgXEAICFRJxAR4BFRJxAR4AFRJhAh4A
+HgEECgIODhcQAgIVEnUBHgAVEnEBHgAVEmECHgAeAQkAAg4OFRJxAQ4LBwMdDhUSdQEOHQMDBhIV
+AwYdCAQgAQ4IBSACAQgcBCABAggIAAESgIURgIkFIAASgI0HIAIBDhKAjQQHARIdBiABARGAlQgB
+AAIAAAAAAAMAAAFHAQAaLk5FVEZyYW1ld29yayxWZXJzaW9uPXY0LjABAFQOFEZyYW1ld29ya0Rp
+c3BsYXlOYW1lEC5ORVQgRnJhbWV3b3JrIDQoAQAjU0NfMzBkYjA0YTI0MzQ0NGU5N2I4N2VjZWRj
+Zjc1ODEwNzUAAAUBAAAAABYBABFDb3B5cmlnaHQgQCAgMjAxNQAACAEACAAAAAAAHgEAAQBUAhZX
+cmFwTm9uRXhjZXB0aW9uVGhyb3dzAQAAaDUAAAAAAAAAAAAAfjUAAAAgAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAHA1AAAAAAAAAABfQ29yRGxsTWFpbgBtc2NvcmVlLmRsbAAAAAAA/yUAIAAQAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAABABAAAAAYAACAAAAAAAAAAAAAAAAAAAABAAEAAAAwAACAAAAAAAAAAAAAAAAAAAABAAAAAABI
+AAAAWEAAALADAAAAAAAAAAAAALADNAAAAFYAUwBfAFYARQBSAFMASQBPAE4AXwBJAE4ARgBPAAAA
+AAC9BO/+AAABAAAAAQAkfssWAAABACR+yxY/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAARAAA
+AAEAVgBhAHIARgBpAGwAZQBJAG4AZgBvAAAAAAAkAAQAAABUAHIAYQBuAHMAbABhAHQAaQBvAG4A
+AAAAAAAAsAQQAwAAAQBTAHQAcgBpAG4AZwBGAGkAbABlAEkAbgBmAG8AAADsAgAAAQAwADAAMAAw
+ADAANABiADAAAABwACQAAQBGAGkAbABlAEQAZQBzAGMAcgBpAHAAdABpAG8AbgAAAAAAUwBDAF8A
+MwAwAGQAYgAwADQAYQAyADQAMwA0ADQANABlADkANwBiADgANwBlAGMAZQBkAGMAZgA3ADUAOAAx
+ADAANwA1AAAAQAAPAAEARgBpAGwAZQBWAGUAcgBzAGkAbwBuAAAAAAAxAC4AMAAuADUAOAAzADUA
+LgAzADIAMgA5ADIAAAAAAHAAKAABAEkAbgB0AGUAcgBuAGEAbABOAGEAbQBlAAAAUwBDAF8AMwAw
+AGQAYgAwADQAYQAyADQAMwA0ADQANABlADkANwBiADgANwBlAGMAZQBkAGMAZgA3ADUAOAAxADAA
+NwA1AC4AZABsAGwAAABIABIAAQBMAGUAZwBhAGwAQwBvAHAAeQByAGkAZwBoAHQAAABDAG8AcAB5
+AHIAaQBnAGgAdAAgAEAAIAAgADIAMAAxADUAAAB4ACgAAQBPAHIAaQBnAGkAbgBhAGwARgBpAGwA
+ZQBuAGEAbQBlAAAAUwBDAF8AMwAwAGQAYgAwADQAYQAyADQAMwA0ADQANABlADkANwBiADgANwBl
+AGMAZQBkAGMAZgA3ADUAOAAxADAANwA1AC4AZABsAGwAAABoACQAAQBQAHIAbwBkAHUAYwB0AE4A
+YQBtAGUAAAAAAFMAQwBfADMAMABkAGIAMAA0AGEAMgA0ADMANAA0ADQAZQA5ADcAYgA4ADcAZQBj
+AGUAZABjAGYANwA1ADgAMQAwADcANQAAAEQADwABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8A
+bgAAADEALgAwAC4ANQA4ADMANQAuADMAMgAyADkAMgAAAAAASAAPAAEAQQBzAHMAZQBtAGIAbAB5
+ACAAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4ANQA4ADMANQAuADMAMgAyADkAMgAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAAwAAACQNQAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
+                      </arrayElements>
+                    </property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the Microsoft Visual Studio Tools for Applications project. Project names must be unique within a package."
+                      name="VSTAProjectName"
+                      typeConverter="NOTBROWSABLE">SC_30db04a243444e97b87ecedcf7581075</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the programming language used by the script."
+                      name="ScriptLanguage"
+                      typeConverter="Microsoft.SqlServer.VSTAHosting.ScriptingLanguages, Microsoft.SqlServer.VSTAScriptingLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">CSharp</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a comma-separated list of read-only variables."
+                      name="ReadOnlyVariables"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIVariablePickerDlg, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a comma-separated list of read/write variables."
+                      name="ReadWriteVariables"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIWriteableVariablePickerDlg, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.String"
+                      description="List of breakpoints present on the script."
+                      isArray="true"
+                      name="BreakpointCollection"
+                      typeConverter="NOTBROWSABLE">
+                      <arrayElements
+                        arrayElementCount="0" />
+                    </property>
+                    <property
+                      dataType="System.String"
+                      description="Checksum to match component metedata against compiled codes."
+                      name="MetadataChecksum"
+                      typeConverter="NOTBROWSABLE">d301805386c2adbcd1026f67ff0ba23d</property>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">Microsoft.SqlServer.Dts.Pipeline.ScriptComponentHost, Microsoft.SqlServer.TxScript, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Tranform Performers.Inputs[Input 0]"
+                      hasSideEffects="true"
+                      name="Input 0">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Tranform Performers.Inputs[Input 0].Columns[singers]"
+                          cachedDataType="wstr"
+                          cachedLength="500"
+                          cachedName="singers"
+                          lineageId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Csv Source.Outputs[Flat File Source Output].Columns[singers]"
+                          usageType="readWrite" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Tranform Performers.Outputs[Output 0]"
+                      name="Output 0"
+                      synchronousInputId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Tranform Performers.Inputs[Input 0]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Tranform Performers.Outputs[Output 0].Columns[IsGroup]"
+                          dataType="bool"
+                          lineageId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Tranform Performers.Outputs[Output 0].Columns[IsGroup]"
+                          name="IsGroup" />
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -1319,14 +3647,39 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
               <paths>
                 <path
                   refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database.Paths[Derived Column Output]"
-                  endId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert to Data Source.Inputs[OLE DB Command Input]"
+                  endId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Genre If Not Exist.Inputs[OLE DB Command Input]"
                   name="Derived Column Output"
-                  startId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Add date and pageId to each row.Outputs[Derived Column Output]" />
+                  startId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Derived Column.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database.Paths[Flat File Source Output]"
-                  endId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Add date and pageId to each row.Inputs[Derived Column Input]"
+                  endId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Tranform Genre.Inputs[Input 0]"
                   name="Flat File Source Output"
                   startId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Csv Source.Outputs[Flat File Source Output]" />
+                <path
+                  refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database.Paths[OLE DB Command Output]"
+                  endId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Singer If Not Exist.Inputs[OLE DB Command Input]"
+                  name="OLE DB Command Output"
+                  startId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Genre If Not Exist.Outputs[OLE DB Command Output]" />
+                <path
+                  refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database.Paths[OLE DB Command Output1]"
+                  endId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Song If Not Exist.Inputs[OLE DB Command Input]"
+                  name="OLE DB Command Output"
+                  startId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Singer If Not Exist.Outputs[OLE DB Command Output]" />
+                <path
+                  refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database.Paths[OLE DB Command Output2]"
+                  endId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To HitStatictis If Not Exist.Inputs[OLE DB Command Input]"
+                  name="OLE DB Command Output"
+                  startId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Song If Not Exist.Outputs[OLE DB Command Output]" />
+                <path
+                  refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database.Paths[Output 0]"
+                  endId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Tranform Performers.Inputs[Input 0]"
+                  name="Output 0"
+                  startId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Tranform Genre.Outputs[Output 0]" />
+                <path
+                  refId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database.Paths[Output 01]"
+                  endId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Derived Column.Inputs[Derived Column Input]"
+                  name="Output 0"
+                  startId="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Tranform Performers.Outputs[Output 0]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -2128,37 +4481,37 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <NodeLayout
           Size="240,42"
           Id="Package\Import Source Pages If Not Exists"
-          TopLeft="194.444444444445,113.777777777778" />
+          TopLeft="16.0000000000001,107.5" />
         <NodeLayout
           Size="193,42"
           Id="Package\Insert Data From Csv Files Into Datasource\Get Info From Filename"
-          TopLeft="87,23" />
+          TopLeft="34,5.5" />
         <NodeLayout
           Size="200,42"
           Id="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database"
-          TopLeft="83.2222222222223,187.111111111111" />
+          TopLeft="30.5,209.5" />
         <NodeLayout
           Size="250,42"
           Id="Package\Insert Data From Csv Files Into Datasource\Insert Or Get PageId from Database"
-          TopLeft="56.9999999999999,103.666666666667" />
+          TopLeft="5.50000000000003,107.5" />
         <NodeLayout
           Size="185,42"
           Id="Package\Insert Data From Csv Files Into Datasource\Move Finished Csv File"
-          TopLeft="90,271" />
+          TopLeft="38.0000000000001,311.5" />
         <EdgeLayout
           Id="Package\Insert Data From Csv Files Into Datasource.PrecedenceConstraints[Constraint]"
-          TopLeft="182.75,65">
+          TopLeft="130.5,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,38.666666666667"
+              EndConnector="0,60"
               Start="0,0"
-              End="0,31.166666666667">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.166666666667" />
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2169,18 +4522,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Insert Data From Csv Files Into Datasource.PrecedenceConstraints[Constraint 1]"
-          TopLeft="182.611111111111,145.666666666667">
+          TopLeft="130.5,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,41.444444444444"
+              EndConnector="0,60"
               Start="0,0"
-              End="0,33.944444444444">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.944444444444" />
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2191,18 +4544,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Insert Data From Csv Files Into Datasource.PrecedenceConstraints[Constraint 2]"
-          TopLeft="182.861111111111,229.111111111111">
+          TopLeft="130.5,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,41.888888888889"
+              EndConnector="0,60"
               Start="0,0"
-              End="0,34.388888888889">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.388888888889" />
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2214,28 +4567,28 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="350,368"
-          Size="350,411"
+          PanelSize="261,409"
+          Size="261,452"
           Id="Package\Insert Data From Csv Files Into Datasource"
-          TopLeft="140.257936507936,205.662698412698" />
+          TopLeft="5.50000000000009,209.5" />
         <NodeLayout
           Size="211,42"
           Id="Package\Scan Source Folder and Init"
-          TopLeft="210.055555555556,19.7500000000001" />
+          TopLeft="30.5,5.5" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="314.85119047619,155.777777777778">
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="136,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,49.88492063492"
+              EndConnector="0,60"
               Start="0,0"
-              End="0,42.38492063492">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,42.38492063492" />
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2245,19 +4598,19 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="315.000000000001,61.7500000000001">
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="136,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,52.0277777777779"
+              EndConnector="0,60"
               Start="0,0"
-              End="0,44.5277777777779">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,44.5277777777779" />
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2273,33 +4626,163 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     design-time-name="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="182,42"
-          Id="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert to Data Source"
-          TopLeft="188,246" />
+          Size="211,42"
+          Id="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Genre If Not Exist"
+          TopLeft="16.5000000000001,413.5" />
         <NodeLayout
-          Size="239,42"
-          Id="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Add date and pageId to each row"
-          TopLeft="165,143" />
+          Size="233,42"
+          Id="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To HitStatictis If Not Exist"
+          TopLeft="5.50000000000009,719.5" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Derived Column"
+          TopLeft="44,311.5" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Tranform Genre"
+          TopLeft="44,107.5" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Tranform Performers"
+          TopLeft="32.5,209.5" />
+        <NodeLayout
+          Size="207,42"
+          Id="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Song If Not Exist"
+          TopLeft="18.5000000000001,617.5" />
         <NodeLayout
           Size="131,42"
           Id="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Csv Source"
-          TopLeft="218,37" />
+          TopLeft="56.5,5.5" />
+        <NodeLayout
+          Size="213,42"
+          Id="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database\Insert To Singer If Not Exist"
+          TopLeft="15.5000000000001,515.5" />
         <EdgeLayout
-          Id="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database.Paths[Flat File Source Output]"
-          TopLeft="284,79">
+          Id="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database.Paths[Output 01]"
+          TopLeft="122,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,64"
+              EndConnector="0,60"
               Start="0,0"
-              End="0,56.5">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,56.5" />
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database.Paths[Output 0]"
+          TopLeft="122,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database.Paths[OLE DB Command Output2]"
+          TopLeft="122,659.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database.Paths[OLE DB Command Output1]"
+          TopLeft="122,557.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database.Paths[OLE DB Command Output]"
+          TopLeft="122,455.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database.Paths[Flat File Source Output]"
+          TopLeft="122,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2310,18 +4793,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Insert Data From Csv Files Into Datasource\Insert Data into Database.Paths[Derived Column Output]"
-          TopLeft="281.75,185">
+          TopLeft="122,353.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,61"
+              EndConnector="0,60"
               Start="0,0"
-              End="0,53.5">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,53.5" />
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
