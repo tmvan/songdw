@@ -8,7 +8,7 @@ BEGIN
 	DECLARE @Year INT = YEAR(@Now), 
 			@Month INT = 1, 
 			@Day INT = 1,
-			@i INT = 0,
+			@i INT = -1,
 			@iYear INT, @iMonth INT, @iDay INT, @iDayMax INT,
 			@AltKey [nvarchar](20)
 	WHILE @i < 2

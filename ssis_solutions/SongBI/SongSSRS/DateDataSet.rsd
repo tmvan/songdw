@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <DataSet Name="">
+    <Query>
+      <DataSourceReference>SongDWDataSource</DataSourceReference>
+      <CommandText>SELECT     AltKey, DateKey, DayOfMonth, MonthOfYear, Year, CONVERT([nvarchar](2), DayOfMonth) + '/' + CONVERT([nvarchar](2), MonthOfYear) + '/' + CONVERT([nvarchar](4), 
+                      Year) AS DisplayDate
+FROM         DimDate</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="AltKey">
+        <DataField>AltKey</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="DateKey">
+        <DataField>DateKey</DataField>
+        <rd:TypeName>System.Int64</rd:TypeName>
+      </Field>
+      <Field Name="DayOfMonth">
+        <DataField>DayOfMonth</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="MonthOfYear">
+        <DataField>MonthOfYear</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Year">
+        <DataField>Year</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="DisplayDate">
+        <DataField>DisplayDate</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

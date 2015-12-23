@@ -5,6 +5,8 @@ Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "SongSSIS", "SongSSIS\SongSS
 EndProject
 Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "SongSSRS", "SongSSRS\SongSSRS.rptproj", "{0C3CFA1E-CF2D-4B52-922D-F19CBC3C614F}"
 EndProject
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "SongSSAS", "SongSSAS\SongSSAS.dwproj", "{9D7EAFD1-32EF-45FE-9539-DF3C9F4E1A8F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Default = Debug|Default
@@ -31,6 +33,18 @@ Global
 		{0C3CFA1E-CF2D-4B52-922D-F19CBC3C614F}.Release|Default.ActiveCfg = Release
 		{0C3CFA1E-CF2D-4B52-922D-F19CBC3C614F}.Release|Default.Build.0 = Release
 		{0C3CFA1E-CF2D-4B52-922D-F19CBC3C614F}.Release|Default.Deploy.0 = Release
+		{9D7EAFD1-32EF-45FE-9539-DF3C9F4E1A8F}.Debug|Default.ActiveCfg = Development
+		{9D7EAFD1-32EF-45FE-9539-DF3C9F4E1A8F}.Debug|Default.Build.0 = Development
+		{9D7EAFD1-32EF-45FE-9539-DF3C9F4E1A8F}.Debug|Default.Deploy.0 = Development
+		{9D7EAFD1-32EF-45FE-9539-DF3C9F4E1A8F}.DebugLocal|Default.ActiveCfg = Development
+		{9D7EAFD1-32EF-45FE-9539-DF3C9F4E1A8F}.DebugLocal|Default.Build.0 = Development
+		{9D7EAFD1-32EF-45FE-9539-DF3C9F4E1A8F}.DebugLocal|Default.Deploy.0 = Development
+		{9D7EAFD1-32EF-45FE-9539-DF3C9F4E1A8F}.Development|Default.ActiveCfg = Development
+		{9D7EAFD1-32EF-45FE-9539-DF3C9F4E1A8F}.Development|Default.Build.0 = Development
+		{9D7EAFD1-32EF-45FE-9539-DF3C9F4E1A8F}.Development|Default.Deploy.0 = Development
+		{9D7EAFD1-32EF-45FE-9539-DF3C9F4E1A8F}.Release|Default.ActiveCfg = Development
+		{9D7EAFD1-32EF-45FE-9539-DF3C9F4E1A8F}.Release|Default.Build.0 = Development
+		{9D7EAFD1-32EF-45FE-9539-DF3C9F4E1A8F}.Release|Default.Deploy.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

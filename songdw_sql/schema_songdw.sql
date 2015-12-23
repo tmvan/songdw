@@ -32,7 +32,7 @@ BEGIN
 	CREATE TABLE [dbo].[DimSinger] (
 		[SingerKey] [bigint] PRIMARY KEY IDENTITY(1,1) NOT NULL,
 		[BusinessKey] [bigint] NOT NULL,
-		[Name] [nvarchar] (200) NOT NULL,
+		[Name] [nvarchar] (500) NOT NULL,
 		[IsGroup] [bit] NOT NULL
 	)
 END
@@ -44,7 +44,7 @@ BEGIN
 	CREATE TABLE [dbo].[DimGenre] (
 		[GenreKey] [bigint] PRIMARY KEY IDENTITY(1,1) NOT NULL,
 		[BusinessKey] [bigint] NOT NULL,
-		[Genre] [nvarchar] (50) NOT NULL
+		[Genre] [nvarchar] (100) NOT NULL
 	)
 END
 
@@ -55,7 +55,8 @@ BEGIN
 	CREATE TABLE [dbo].[DimSong] (
 		[SongKey] [bigint] PRIMARY KEY IDENTITY(1,1) NOT NULL,
 		[BusinessKey] [bigint] NOT NULL,
-		[Title] [nvarchar] (100) NOT NULL
+		[Title] [nvarchar] (200) NOT NULL,
+		[GenreKey] [bigint] NOT NULL,
 	)
 END
 
@@ -67,7 +68,6 @@ BEGIN
 		[SongFactKey] [bigint] PRIMARY KEY IDENTITY(1,1) NOT NULL,
 		[SongKey] [bigint] NOT NULL,
 		[SingerKey] [bigint] NOT NULL,
-		[GenreKey] [bigint] NOT NULL,
 		[DateKey] [bigint] NOT NULL,
 		[PageKey] [bigint] NOT NULL,
 		[HitCount] [int] NOT NULL

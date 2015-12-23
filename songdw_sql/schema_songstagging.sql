@@ -17,7 +17,7 @@ IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES
 BEGIN
 	CREATE TABLE [dbo].[Singer] (
 		[BusinessKey] [bigint] NOT NULL,
-		[Name] [nvarchar](200) NOT NULL,
+		[Name] [nvarchar](500) NOT NULL,
 		[IsGroup] [bit] NOT NULL,
 	)
 END
@@ -38,6 +38,7 @@ IF (NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES
 BEGIN
 	CREATE TABLE [dbo].[Song] (
 		[BusinessKey] [bigint] NOT NULL,
-		[Title] [nvarchar](100) NOT NULL
+		[Title] [nvarchar](200) NOT NULL,
+		[GenreBusinessKey] [bigint] NOT NULL
 	)
 END
