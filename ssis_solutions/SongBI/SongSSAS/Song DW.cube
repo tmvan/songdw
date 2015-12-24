@@ -1,0 +1,193 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="d6aff329-c4ac-452f-b1c9-2dc1b2781d00" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Song DW</ID>
+  <Name>Song DW</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="82c0e2c0-7932-4778-8dd8-99034a1d8c18">
+      <ID>Dim Song</ID>
+      <Name>Dim Song</Name>
+      <DimensionID>Dim Song</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="7d640a19-09d5-4100-996f-5a0815f979e9">
+          <AttributeID>Song Key</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="8372f1cf-661e-46aa-b881-2dc64aa55e4a">
+          <AttributeID>Genre Key</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="958c1352-f48b-4401-bf0a-f79cd325f396">
+      <ID>Dim Singer</ID>
+      <Name>Dim Singer</Name>
+      <DimensionID>Dim Singer</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="c242842d-40a2-4211-abba-61cb0842dfb7">
+          <AttributeID>Singer Key</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="7bb1d2b2-7da1-4656-a970-4f2641cea14d">
+      <ID>Dim Date</ID>
+      <Name>Dim Date</Name>
+      <DimensionID>Dim Date</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="9c6298b7-1c25-4dea-a980-f3d54c4b34ca">
+          <AttributeID>Date Key</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="3229abe6-6650-4327-9e8c-71d0e0da7de9">
+      <ID>Dim Page</ID>
+      <Name>Dim Page</Name>
+      <DimensionID>Dim Page</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="887e26ba-baf5-4130-ba03-01107114eae8">
+          <AttributeID>Page Key</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="f44eed47-5737-4e95-a884-d7f0e9303b24">
+      <ID>Fact Song</ID>
+      <Name>Fact Song</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="45ee1e23-91b3-4912-81d6-c788af68c549">
+          <ID>Hit Count</ID>
+          <Name>Hit Count</Name>
+          <Source dwd:design-time-name="aa21031f-b77e-4d0d-8d9e-7435533afe75">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="b15cf071-4287-42cb-863c-30e688c27180">
+              <TableID>dbo_FactSong</TableID>
+              <ColumnID>HitCount</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="4d8aa176-0433-4560-a112-f15aa9cfd8a4">
+          <CubeDimensionID>Dim Song</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="f3ca083c-0ef9-4e87-bcd7-4186a3b9a8d8">
+              <AttributeID>Song Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="c9ad4bbd-f005-48f3-8fd5-fddac20afeeb">
+                  <DataType>BigInt</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="a340e6ac-55ba-4854-9a5a-b6e7f8488370">
+                    <TableID>dbo_FactSong</TableID>
+                    <ColumnID>SongKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="fdb325eb-d8a6-4ce3-95f3-8ddfb31871c2">
+          <CubeDimensionID>Dim Singer</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="eae365dd-3e20-484c-8d7b-d0e9ff28fd2b">
+              <AttributeID>Singer Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="436406e7-e025-4936-bee1-23e3c8f1ace0">
+                  <DataType>BigInt</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="10a27460-d57d-4c03-9c5b-bbb15a910913">
+                    <TableID>dbo_FactSong</TableID>
+                    <ColumnID>SingerKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="db84d060-c849-421d-a321-d6215a7ec684">
+          <CubeDimensionID>Dim Date</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="176ef825-6cdc-4742-a124-7201c80d7a1e">
+              <AttributeID>Date Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="49de42a3-2876-4898-978a-93ebb998c523">
+                  <DataType>BigInt</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="bc0326fb-93ee-4056-be6a-da6f15d01bb6">
+                    <TableID>dbo_FactSong</TableID>
+                    <ColumnID>DateKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="9f4523a1-7e36-4f8d-ae91-637ee827e684">
+          <CubeDimensionID>Dim Page</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="d93de66b-515b-4940-aa5c-2239fe31d364">
+              <AttributeID>Page Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="77dbd7ff-21d3-4dfd-b9ce-931855d178de">
+                  <DataType>BigInt</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="964394a2-f5b3-4423-9d1a-05ca893ba94d">
+                    <TableID>dbo_FactSong</TableID>
+                    <ColumnID>PageKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="c3d5c767-4721-4af9-945a-720625fa2a2f">
+    <DataSourceViewID>Song DW</DataSourceViewID>
+  </Source>
+</Cube>

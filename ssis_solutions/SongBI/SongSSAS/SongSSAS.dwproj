@@ -6,10 +6,67 @@
     <Name>SongSSAS.database</Name>
     <FullPath>SongSSAS.database</FullPath>
   </Database>
+  <Cubes>
+    <ProjectItem>
+      <Name>Song DW.cube</Name>
+      <FullPath>Song DW.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>Song DW.partitions</Name>
+          <FullPath>Song DW.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+  </Cubes>
+  <Dimensions>
+    <ProjectItem>
+      <Name>Dim Song.dim</Name>
+      <FullPath>Dim Song.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Singer.dim</Name>
+      <FullPath>Dim Singer.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Date.dim</Name>
+      <FullPath>Dim Date.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Page.dim</Name>
+      <FullPath>Dim Page.dim</FullPath>
+    </ProjectItem>
+  </Dimensions>
+  <DataSources>
+    <ProjectItem>
+      <Name>Song DW.ds</Name>
+      <FullPath>Song DW.ds</FullPath>
+    </ProjectItem>
+  </DataSources>
+  <DataSourceViews>
+    <ProjectItem>
+      <Name>Song DW.dsv</Name>
+      <FullPath>Song DW.dsv</FullPath>
+    </ProjectItem>
+  </DataSourceViews>
   <Configurations>
     <Configuration>
       <Name>Development</Name>
-      <Options />
+      <Options>
+        <ConnectionMappings>
+          <ConfigurationSetting>
+            <Id>Song DW</Id>
+            <Name>Song DW</Name>
+            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=.;Integrated Security=SSPI;Initial Catalog=SongDW</Value>
+          </ConfigurationSetting>
+        </ConnectionMappings>
+        <ConnectionSecurityMappings>
+          <ConfigurationSetting>
+            <Id>Song DW</Id>
+            <Name>Song DW</Name>
+            <Value xsi:type="xsd:int">0</Value>
+          </ConfigurationSetting>
+        </ConnectionSecurityMappings>
+      </Options>
     </Configuration>
   </Configurations>
 </Project>
